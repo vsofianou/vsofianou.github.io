@@ -9,11 +9,12 @@ Bilingual (English / Ελληνικά) with a language toggle in the top-right o
 
 ```text
 vasiliki/
-├── index.html      # All content + section markup (edit text here)
-├── styles.css      # Colours, fonts, layout (edit the design here)
-├── script.js       # Language toggle, gallery filter, lightbox, menu
+├── index.html        # Section markup (references text by key)
+├── translations.js   # All user-visible strings (edit text here)
+├── styles.css        # Colours, fonts, layout (edit the design here)
+├── script.js         # Language toggle, gallery filter, lightbox, menu
 ├── images/
-│   └── works/      # Put artwork images here
+│   └── works/        # Put artwork images here
 └── README.md
 ```
 
@@ -21,20 +22,34 @@ Sections, in order: Hero → About → Works (with category filter) → Exhibiti
 
 ## Editing content
 
-All visible text lives in `index.html`. Every translatable element carries two attributes:
+All user-visible text lives in **`translations.js`**, grouped by language (`en`, `el`).
+Each string has a key; the markup in `index.html` references that key via `data-i18n`:
 
-```html
-<a data-en="Works" data-el="Έργα">Works</a>
+```js
+// translations.js
+window.I18N = {
+  en: { "nav.works": "Works", /* ... */ },
+  el: { "nav.works": "Έργα",  /* ... */ }
+};
 ```
 
-- `data-en` = English text
-- `data-el` = Greek text
+```html
+<!-- index.html -->
+<a href="#portfolio" data-i18n="nav.works">Works</a>
+```
 
-Edit **both** so the language toggle stays in sync. The text between the tags is just the
-default shown before JavaScript runs — keep it equal to `data-en`.
+To change wording, edit the value in `translations.js` for **both** `en` and `el`. The text
+between the tags in `index.html` is only a fallback shown before JavaScript runs — keep it
+roughly equal to the English string.
 
-Search the file for `[Replace ...]` / `[Add ...]` / `[...]` placeholders and fill in the real
-bio, statement, exhibition entries, email and social links.
+Search `translations.js` for `[Replace ...]` / `[Add ...]` / `[...]` placeholders and fill in
+the real bio, statement, exhibition entries, email and social links.
+
+### Adding a language
+
+Add a new top-level block to `window.I18N` (e.g. `fr: { ... }`) with the same keys, then add a
+`<span data-lang="fr">FR</span>` to the language toggle in `index.html`. Missing keys fall back
+to English automatically.
 
 ### Contact
 
@@ -53,14 +68,16 @@ grey placeholder with a real image:
 
 ```html
 <figure class="gallery__item" data-category="wall">
-  <img src="images/works/piece-01.webp" alt="Untitled I" loading="lazy" />
+  <img src="images/works/piece-01.webp" data-i18n-alt="work.1.name" alt="Untitled I" loading="lazy" />
   <figcaption>
-    <span class="gallery__name" data-en="Untitled I" data-el="Χωρίς τίτλο I">Untitled I</span>
-    <span class="gallery__meta" data-en="Wool, linen · 2024" data-el="Μαλλί, λινό · 2024">Wool, linen · 2024</span>
+    <span class="gallery__name" data-i18n="work.1.name">Untitled I</span>
+    <span class="gallery__meta" data-i18n="work.1.meta">Wool, linen · 2024</span>
   </figcaption>
 </figure>
 ```
 
+- Add the matching `work.N.name` / `work.N.meta` strings to **both** languages in
+  `translations.js`. Use `data-i18n-alt="<key>"` on the `<img>` to translate its `alt` text.
 - `data-category` must be one of: `wall`, `sculptural`, `functional`, `experimental`
   (these map to the filter buttons; rename/add both here and in the `.filters` block if needed).
 - Put image files in `images/works/`.

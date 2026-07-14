@@ -5,17 +5,30 @@
   var STORAGE_KEY = "vasiliki-lang";
   var langToggle = document.getElementById("langToggle");
 
+  var DICT = window.I18N || {};
+
+  function translate(key, lang) {
+    var value = (DICT[lang] && DICT[lang][key]);
+    if (value == null) value = (DICT.en && DICT.en[key]); // fallback to English
+    return value;
+  }
+
   function applyLanguage(lang) {
     document.documentElement.lang = lang;
 
-    document.querySelectorAll("[data-en]").forEach(function (el) {
-      var value = el.getAttribute("data-" + lang);
-      if (value === null) return;
+    document.querySelectorAll("[data-i18n]").forEach(function (el) {
+      var value = translate(el.getAttribute("data-i18n"), lang);
+      if (value == null) return;
       if (el.tagName === "META") {
         el.setAttribute("content", value);
       } else {
         el.textContent = value;
       }
+    });
+
+    document.querySelectorAll("[data-i18n-alt]").forEach(function (el) {
+      var value = translate(el.getAttribute("data-i18n-alt"), lang);
+      if (value != null) el.setAttribute("alt", value);
     });
 
     document.querySelectorAll("[data-lang]").forEach(function (el) {

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vasiliki — Handwoven Textile Constructions</title>
-  <meta name="description" data-en="Vasiliki — handwoven textile constructions made on the loom." data-el="Βασιλική — υφαντές κατασκευές φτιαγμένες στον αργαλειό." content="Vasiliki — handwoven textile constructions made on the loom." />
+  <meta name="description" data-i18n="meta.description" content="Vasiliki — handwoven textile constructions made on the loom." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -15,10 +15,10 @@
   <header class="nav" id="nav">
     <a href="#hero" class="nav__brand">Vasiliki</a>
     <nav class="nav__links" id="navLinks">
-      <a href="#about" data-en="About" data-el="Βιογραφικό">About</a>
-      <a href="#portfolio" data-en="Works" data-el="Έργα">Works</a>
-      <a href="#exhibitions" data-en="Exhibitions" data-el="Εκθέσεις">Exhibitions</a>
-      <a href="#contact" data-en="Contact" data-el="Επικοινωνία">Contact</a>
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#portfolio" data-i18n="nav.works">Works</a>
+      <a href="#exhibitions" data-i18n="nav.exhibitions">Exhibitions</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
     </nav>
     <div class="nav__actions">
       <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">
@@ -33,10 +33,10 @@
   <!-- ===================== HERO ===================== -->
   <section class="hero" id="hero">
     <div class="hero__inner">
-      <p class="hero__eyebrow" data-en="Textile Artist" data-el="Εικαστικός Υφαντικής">Textile Artist</p>
+      <p class="hero__eyebrow" data-i18n="hero.eyebrow">Textile Artist</p>
       <h1 class="hero__title">Vasiliki</h1>
-      <p class="hero__tagline" data-en="Handwoven constructions born on the loom." data-el="Υφαντές κατασκευές που γεννιούνται στον αργαλειό.">Handwoven constructions born on the loom.</p>
-      <a href="#portfolio" class="btn" data-en="View the work" data-el="Δείτε τα έργα">View the work</a>
+      <p class="hero__tagline" data-i18n="hero.tagline">Handwoven constructions born on the loom.</p>
+      <a href="#portfolio" class="btn" data-i18n="hero.cta">View the work</a>
     </div>
     <a href="#about" class="hero__scroll" aria-label="Scroll down">&#8595;</a>
   </section>
@@ -44,69 +44,69 @@
   <!-- ===================== ABOUT ===================== -->
   <section class="section about" id="about">
     <div class="about__media">
-      <div class="placeholder placeholder--portrait" data-en="Portrait photo" data-el="Φωτογραφία πορτρέτου">Portrait photo</div>
+      <div class="placeholder placeholder--portrait" data-i18n="about.portrait">Portrait photo</div>
     </div>
     <div class="about__text">
-      <h2 class="section__title" data-en="About" data-el="Βιογραφικό">About</h2>
-      <p data-en="Vasiliki is a textile artist working primarily on the loom, where thread, tension and time become sculptural constructions. [Replace this with a short bio — where she trained, how she came to weaving, and what drives the work.]" data-el="Η Βασιλική είναι εικαστικός της υφαντικής που εργάζεται κυρίως στον αργαλειό, όπου το νήμα, η ένταση και ο χρόνος γίνονται γλυπτικές κατασκευές. [Αντικαταστήστε το με ένα σύντομο βιογραφικό — πού σπούδασε, πώς ήρθε στην υφαντική και τι κινεί τη δουλειά της.]">Vasiliki is a textile artist working primarily on the loom, where thread, tension and time become sculptural constructions. [Replace this with a short bio.]</p>
-      <p class="about__statement" data-en="&ldquo;[Add a short artistic statement here — a sentence or two about your relationship with weaving and material.]&rdquo;" data-el="&laquo;[Προσθέστε εδώ μια σύντομη καλλιτεχνική δήλωση — μία ή δύο προτάσεις για τη σχέση σας με την υφαντική και το υλικό.]&raquo;">&ldquo;[Add a short artistic statement here.]&rdquo;</p>
+      <h2 class="section__title" data-i18n="about.title">About</h2>
+      <p data-i18n="about.bio">Vasiliki is a textile artist working primarily on the loom, where thread, tension and time become sculptural constructions. [Replace this with a short bio.]</p>
+      <p class="about__statement" data-i18n="about.statement">“[Add a short artistic statement here.]”</p>
     </div>
   </section>
 
   <!-- ===================== PORTFOLIO ===================== -->
   <section class="section portfolio" id="portfolio">
-    <h2 class="section__title section__title--center" data-en="Works" data-el="Έργα">Works</h2>
+    <h2 class="section__title section__title--center" data-i18n="portfolio.title">Works</h2>
 
     <div class="filters" id="filters">
-      <button class="filter is-active" data-filter="all" data-en="All" data-el="Όλα">All</button>
-      <button class="filter" data-filter="wall" data-en="Wall hangings" data-el="Επιτοίχια">Wall hangings</button>
-      <button class="filter" data-filter="sculptural" data-en="Sculptural" data-el="Γλυπτικά">Sculptural</button>
-      <button class="filter" data-filter="functional" data-en="Functional" data-el="Χρηστικά">Functional</button>
-      <button class="filter" data-filter="experimental" data-en="Experimental" data-el="Πειραματικά">Experimental</button>
+      <button class="filter is-active" data-filter="all" data-i18n="filter.all">All</button>
+      <button class="filter" data-filter="wall" data-i18n="filter.wall">Wall hangings</button>
+      <button class="filter" data-filter="sculptural" data-i18n="filter.sculptural">Sculptural</button>
+      <button class="filter" data-filter="functional" data-i18n="filter.functional">Functional</button>
+      <button class="filter" data-filter="experimental" data-i18n="filter.experimental">Experimental</button>
     </div>
 
     <div class="gallery" id="gallery">
-      <!-- Repeat this figure per artwork. Swap the placeholder div for: <img src="images/works/piece-1.webp" alt="..." loading="lazy" /> -->
+      <!-- Repeat this figure per artwork. Swap the placeholder div for: <img src="images/works/piece-1.webp" data-i18n-alt="work.1.name" alt="Untitled I" loading="lazy" /> -->
       <figure class="gallery__item" data-category="wall">
         <div class="placeholder placeholder--work">Work 01</div>
         <figcaption>
-          <span class="gallery__name" data-en="Untitled I" data-el="Χωρίς τίτλο I">Untitled I</span>
-          <span class="gallery__meta" data-en="Wool, linen · 2024" data-el="Μαλλί, λινό · 2024">Wool, linen · 2024</span>
+          <span class="gallery__name" data-i18n="work.1.name">Untitled I</span>
+          <span class="gallery__meta" data-i18n="work.1.meta">Wool, linen · 2024</span>
         </figcaption>
       </figure>
       <figure class="gallery__item" data-category="sculptural">
         <div class="placeholder placeholder--work">Work 02</div>
         <figcaption>
-          <span class="gallery__name" data-en="Untitled II" data-el="Χωρίς τίτλο II">Untitled II</span>
-          <span class="gallery__meta" data-en="Mixed fibres · 2024" data-el="Μεικτές ίνες · 2024">Mixed fibres · 2024</span>
+          <span class="gallery__name" data-i18n="work.2.name">Untitled II</span>
+          <span class="gallery__meta" data-i18n="work.2.meta">Mixed fibres · 2024</span>
         </figcaption>
       </figure>
       <figure class="gallery__item" data-category="functional">
         <div class="placeholder placeholder--work">Work 03</div>
         <figcaption>
-          <span class="gallery__name" data-en="Untitled III" data-el="Χωρίς τίτλο III">Untitled III</span>
-          <span class="gallery__meta" data-en="Wool · 2023" data-el="Μαλλί · 2023">Wool · 2023</span>
+          <span class="gallery__name" data-i18n="work.3.name">Untitled III</span>
+          <span class="gallery__meta" data-i18n="work.3.meta">Wool · 2023</span>
         </figcaption>
       </figure>
       <figure class="gallery__item" data-category="experimental">
         <div class="placeholder placeholder--work">Work 04</div>
         <figcaption>
-          <span class="gallery__name" data-en="Untitled IV" data-el="Χωρίς τίτλο IV">Untitled IV</span>
-          <span class="gallery__meta" data-en="Paper, thread · 2023" data-el="Χαρτί, νήμα · 2023">Paper, thread · 2023</span>
+          <span class="gallery__name" data-i18n="work.4.name">Untitled IV</span>
+          <span class="gallery__meta" data-i18n="work.4.meta">Paper, thread · 2023</span>
         </figcaption>
       </figure>
       <figure class="gallery__item" data-category="wall">
         <div class="placeholder placeholder--work">Work 05</div>
         <figcaption>
-          <span class="gallery__name" data-en="Untitled V" data-el="Χωρίς τίτλο V">Untitled V</span>
-          <span class="gallery__meta" data-en="Linen · 2022" data-el="Λινό · 2022">Linen · 2022</span>
+          <span class="gallery__name" data-i18n="work.5.name">Untitled V</span>
+          <span class="gallery__meta" data-i18n="work.5.meta">Linen · 2022</span>
         </figcaption>
       </figure>
       <figure class="gallery__item" data-category="sculptural">
         <div class="placeholder placeholder--work">Work 06</div>
         <figcaption>
-          <span class="gallery__name" data-en="Untitled VI" data-el="Χωρίς τίτλο VI">Untitled VI</span>
-          <span class="gallery__meta" data-en="Wool, wire · 2022" data-el="Μαλλί, σύρμα · 2022">Wool, wire · 2022</span>
+          <span class="gallery__name" data-i18n="work.6.name">Untitled VI</span>
+          <span class="gallery__meta" data-i18n="work.6.meta">Wool, wire · 2022</span>
         </figcaption>
       </figure>
     </div>
@@ -114,28 +114,28 @@
 
   <!-- ===================== EXHIBITIONS ===================== -->
   <section class="section exhibitions" id="exhibitions">
-    <h2 class="section__title section__title--center" data-en="Exhibitions &amp; Press" data-el="Εκθέσεις &amp; Τύπος">Exhibitions &amp; Press</h2>
+    <h2 class="section__title section__title--center" data-i18n="exhibitions.title">Exhibitions &amp; Press</h2>
     <ul class="timeline">
       <li>
         <span class="timeline__year">2024</span>
-        <span class="timeline__desc" data-en="[Group show title], [Gallery / City]" data-el="[Τίτλος ομαδικής έκθεσης], [Γκαλερί / Πόλη]">[Group show title], [Gallery / City]</span>
+        <span class="timeline__desc" data-i18n="exhibitions.item1">[Group show title], [Gallery / City]</span>
       </li>
       <li>
         <span class="timeline__year">2023</span>
-        <span class="timeline__desc" data-en="[Solo show title], [Gallery / City]" data-el="[Τίτλος ατομικής έκθεσης], [Γκαλερί / Πόλη]">[Solo show title], [Gallery / City]</span>
+        <span class="timeline__desc" data-i18n="exhibitions.item2">[Solo show title], [Gallery / City]</span>
       </li>
       <li>
         <span class="timeline__year">2022</span>
-        <span class="timeline__desc" data-en="[Award / Publication], [Source]" data-el="[Βραβείο / Δημοσίευση], [Πηγή]">[Award / Publication], [Source]</span>
+        <span class="timeline__desc" data-i18n="exhibitions.item3">[Award / Publication], [Source]</span>
       </li>
     </ul>
   </section>
 
   <!-- ===================== CONTACT ===================== -->
   <section class="section contact" id="contact">
-    <h2 class="section__title section__title--center" data-en="Contact" data-el="Επικοινωνία">Contact</h2>
-    <p class="contact__lead" data-en="For commissions, exhibitions or studio visits, get in touch." data-el="Για παραγγελίες, εκθέσεις ή επισκέψεις στο εργαστήριο, επικοινωνήστε.">For commissions, exhibitions or studio visits, get in touch.</p>
-    <a class="btn" href="mailto:hello@example.com" data-en="Send an email" data-el="Στείλτε email">Send an email</a>
+    <h2 class="section__title section__title--center" data-i18n="contact.title">Contact</h2>
+    <p class="contact__lead" data-i18n="contact.lead">For commissions, exhibitions or studio visits, get in touch.</p>
+    <a class="btn" href="mailto:hello@example.com" data-i18n="contact.cta">Send an email</a>
     <div class="contact__social">
       <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a>
       <a href="https://facebook.com/" target="_blank" rel="noopener">Facebook</a>
@@ -144,7 +144,7 @@
 
   <!-- ===================== FOOTER ===================== -->
   <footer class="footer">
-    <p>&copy; <span id="year"></span> Vasiliki. <span data-en="All rights reserved." data-el="Με επιφύλαξη παντός δικαιώματος.">All rights reserved.</span></p>
+    <p>&copy; <span id="year"></span> Vasiliki. <span data-i18n="footer.rights">All rights reserved.</span></p>
   </footer>
 
   <!-- ===================== LIGHTBOX ===================== -->
@@ -156,6 +156,7 @@
     <p class="lightbox__caption" id="lightboxCaption"></p>
   </div>
 
+  <script src="translations.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
