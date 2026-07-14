@@ -1,14 +1,17 @@
 /* ===================== Tokens ===================== */
 :root {
-  --bg: #eef3f8;
-  --bg-alt: #e0eaf3;
-  --ink: #16293c;
-  --muted: #5f7488;
-  --line: #c6d6e5;
-  --accent: #2f6fa6;      /* blue */
-  --accent-dark: #21547f;
-  --serif: "Cormorant Garamond", Georgia, serif;
+  --bg: #f4f5fb;
+  --bg-alt: #e7e9f6;
+  --ink: #101641;
+  --muted: #5a6086;
+  --line: #d2d6ec;
+  --accent: #1f2c9c;      /* ultramarine (from hero) */
+  --accent-dark: #161f75;
+  --gold: #c8912f;        /* thread gold */
+  --gold-dark: #a8781f;
+  --serif: "EB Garamond", Georgia, serif;
   --sans: "Inter", system-ui, -apple-system, sans-serif;
+  --statement: "Ysabeau", "EB Garamond", serif;   /* Garamond-companion sans, supports Greek */
   --nav-h: 68px;
   --maxw: 1120px;
   --radius: 4px;
@@ -44,6 +47,10 @@ img { max-width: 100%; display: block; }
 }
 .btn:hover { background: var(--accent-dark); transform: translateY(-2px); }
 
+/* Gold variant — used over the dark hero image */
+.btn--gold { background: var(--gold); color: #1b1405; }
+.btn--gold:hover { background: var(--gold-dark); }
+
 /* ===================== Nav ===================== */
 .nav {
   position: fixed;
@@ -53,7 +60,7 @@ img { max-width: 100%; display: block; }
   align-items: center;
   justify-content: space-between;
   padding: 0 clamp(1.2rem, 4vw, 3rem);
-  background: rgba(238, 243, 248, 0.85);
+  background: rgba(244, 245, 251, 0.85);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid transparent;
   z-index: 100;
@@ -122,16 +129,21 @@ img { max-width: 100%; display: block; }
   text-align: center;
   padding: var(--nav-h) 1.5rem 3rem;
   position: relative;
-  background:
-    linear-gradient(rgba(22, 41, 60, 0.05), rgba(22, 41, 60, 0.05)),
-    repeating-linear-gradient(45deg, var(--bg) 0 12px, var(--bg-alt) 12px 24px);
+  color: #f5f2e8;
+  background-color: var(--accent-dark);
+  background-image:
+    linear-gradient(180deg, rgba(6, 10, 38, 0.4) 0%, rgba(6, 10, 38, 0.22) 45%, rgba(6, 10, 38, 0.42) 100%),
+    url("images/hero.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .hero__inner { max-width: 640px; }
 .hero__eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.35em;
   font-size: 0.78rem;
-  color: var(--accent);
+  color: var(--gold);
   margin: 0 0 1rem;
 }
 .hero__title {
@@ -141,18 +153,21 @@ img { max-width: 100%; display: block; }
   line-height: 1;
   margin: 0 0 1rem;
   letter-spacing: 0.02em;
+  color: #fbf8ef;
+  text-shadow: 0 2px 24px rgba(4, 8, 30, 0.55);
 }
 .hero__tagline {
   font-family: var(--serif);
   font-size: clamp(1.2rem, 3vw, 1.7rem);
-  color: var(--muted);
+  color: #e2e4f2;
   margin: 0 0 2.2rem;
+  text-shadow: 0 1px 16px rgba(4, 8, 30, 0.5);
 }
 .hero__scroll {
   position: absolute;
   bottom: 2rem; left: 50%;
   transform: translateX(-50%);
-  color: var(--muted);
+  color: var(--gold);
   font-size: 1.4rem;
   text-decoration: none;
   animation: bob 2s ease-in-out infinite;
@@ -181,14 +196,18 @@ img { max-width: 100%; display: block; }
   align-items: center;
 }
 .about__statement {
-  font-family: var(--serif);
-  font-size: 1.3rem;
-  font-style: italic;
-  color: var(--accent-dark);
-  border-left: 2px solid var(--accent);
-  padding-left: 1.2rem;
-  margin-top: 1.8rem;
+  border-left: 2px solid var(--gold);
+  padding-left: 1.4rem;
+  margin: 1.8rem 0 0;
 }
+.about__statement p {
+  font-family: var(--statement);
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--accent-dark);
+  margin: 0 0 0.9rem;
+}
+.about__statement p:last-child { margin-bottom: 0; }
 
 /* ===================== Placeholders ===================== */
 .placeholder {
@@ -284,7 +303,7 @@ img { max-width: 100%; display: block; }
 .lightbox {
   position: fixed;
   inset: 0;
-  background: rgba(13, 25, 38, 0.93);
+  background: rgba(6, 10, 38, 0.94);
   display: none;
   align-items: center;
   justify-content: center;

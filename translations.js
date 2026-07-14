@@ -23,7 +23,10 @@ window.I18N = {
     "about.portrait": "Portrait photo",
     "about.title": "About",
     "about.bio": "Vasiliki is a textile artist working primarily on the loom, where thread, tension and time become sculptural constructions. [Replace this with a short bio — where she trained, how she came to weaving, and what drives the work.]",
-    "about.statement": "“[Add a short artistic statement here — a sentence or two about your relationship with weaving and material.]”",
+    "about.statement.p1": "Weaving is the language through which I explore the invisible connections that link people, nature, and time.",
+    "about.statement.p2": "Using threads, metal, wood, and natural materials that already bear the traces of their own lives, I create works in which memory, decay, and transformation take on a tangible form.",
+    "about.statement.p3": "I am interested in the moment when matter ceases to be merely an object and becomes a vessel of experience.",
+    "about.statement.p4": "My work navigates between light and darkness, presence and absence, the personal and the collective. It does not seek to provide answers, but rather to create a space for encounter, where the viewer is invited to recognize the invisible bonds that connect us to one another and to the world.",
 
     "portfolio.title": "Works",
     "filter.all": "All",
@@ -72,7 +75,10 @@ window.I18N = {
     "about.portrait": "Φωτογραφία πορτρέτου",
     "about.title": "Βιογραφικό",
     "about.bio": "Η Βασιλική είναι εικαστικός της υφαντικής που εργάζεται κυρίως στον αργαλειό, όπου το νήμα, η ένταση και ο χρόνος γίνονται γλυπτικές κατασκευές. [Αντικαταστήστε το με ένα σύντομο βιογραφικό — πού σπούδασε, πώς ήρθε στην υφαντική και τι κινεί τη δουλειά της.]",
-    "about.statement": "«[Προσθέστε εδώ μια σύντομη καλλιτεχνική δήλωση — μία ή δύο προτάσεις για τη σχέση σας με την υφαντική και το υλικό.]»",
+    "about.statement.p1": "Η ύφανση είναι η γλώσσα μέσα από την οποία διερευνώ τις αόρατες σχέσεις που συνδέουν τον άνθρωπο, τη φύση και τον χρόνο.",
+    "about.statement.p2": "Μέσα από νήματα, μέταλλο, ξύλο και φυσικά υλικά που φέρουν ήδη τα ίχνη της ζωής τους, δημιουργώ έργα όπου η μνήμη, η φθορά και η μεταμόρφωση αποκτούν υλική υπόσταση.",
+    "about.statement.p3": "Με ενδιαφέρει η στιγμή κατά την οποία η ύλη παύει να είναι απλώς αντικείμενο και γίνεται φορέας εμπειρίας.",
+    "about.statement.p4": "Το έργο μου κινείται ανάμεσα στο φως και το σκοτάδι, την παρουσία και την απουσία, το προσωπικό και το συλλογικό. Δεν επιδιώκει να δώσει απαντήσεις, αλλά να δημιουργήσει έναν χώρο συνάντησης, όπου ο θεατής καλείται να αναγνωρίσει τους αόρατους δεσμούς που μας συνδέουν μεταξύ μας και με τον κόσμο.",
 
     "portfolio.title": "Έργα",
     "filter.all": "Όλα",
