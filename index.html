@@ -8,37 +8,40 @@
   <meta name="description" data-i18n="meta.description" content="Vasiliki — handwoven textile constructions made on the loom." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Ysabeau:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Ephesis&family=Ysabeau:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="preload" as="image" href="images/hero.webp" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <!-- ===================== NAV ===================== -->
   <header class="nav" id="nav">
-    <a href="#hero" class="nav__brand">Vasiliki</a>
-    <nav class="nav__links" id="navLinks">
-      <a href="#about" data-i18n="nav.about">About</a>
-      <a href="#portfolio" data-i18n="nav.works">Works</a>
-      <a href="#exhibitions" data-i18n="nav.exhibitions">Exhibitions</a>
-      <a href="#contact" data-i18n="nav.contact">Contact</a>
-    </nav>
-    <div class="nav__actions">
-      <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">
-        <span data-lang="en">EN</span><span class="lang-sep">/</span><span data-lang="el">ΕΛ</span>
-      </button>
-      <button class="nav__burger" id="burger" type="button" aria-label="Toggle menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+    <button class="nav__toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navPanel">
+      <span class="nav__toggle-bars" aria-hidden="true">
+        <span></span><span></span>
+      </span>
+    </button>
+
+    <div class="nav__backdrop" id="navBackdrop" aria-hidden="true"></div>
+
+    <div class="nav__panel" id="navPanel" aria-hidden="true">
+      <nav class="nav__links" id="navLinks" aria-label="Primary">
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#portfolio" data-i18n="nav.works">Works</a>
+        <a href="#exhibitions" data-i18n="nav.exhibitions">Exhibitions</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
     </div>
+
+    <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">
+      <span data-lang="en">EN</span><span class="lang-sep">/</span><span data-lang="el">ΕΛ</span>
+    </button>
   </header>
 
   <!-- ===================== HERO ===================== -->
-  <section class="hero" id="hero">
-    <div class="hero__inner">
-      <p class="hero__eyebrow" data-i18n="hero.eyebrow">Textile Artist</p>
-      <h1 class="hero__title">Vasiliki</h1>
-      <p class="hero__tagline" data-i18n="hero.tagline">Handwoven constructions born on the loom.</p>
-      <a href="#portfolio" class="btn btn--gold" data-i18n="hero.cta">View the work</a>
+  <section class="hero" id="hero" aria-label="Vasiliki Sofianou">
+    <div class="hero__signature">
+      <p class="hero__name">Vasiliki Sofianou</p>
+      <p class="hero__subtitle">Conceptual weaving</p>
     </div>
     <a href="#about" class="hero__scroll" aria-label="Scroll down">&#8595;</a>
   </section>

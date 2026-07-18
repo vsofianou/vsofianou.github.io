@@ -49,33 +49,50 @@
     });
   }
 
-  /* ===================== Sticky nav shadow ===================== */
+  /* ===================== Floating nav (over hero / scrolled) ===================== */
   var nav = document.getElementById("nav");
+  var hero = document.getElementById("hero");
   function onScroll() {
     if (!nav) return;
-    nav.classList.toggle("is-scrolled", window.scrollY > 10);
+    var threshold = hero ? Math.max(hero.offsetHeight - 48, 40) : 40;
+    nav.classList.toggle("is-scrolled", window.scrollY > threshold);
   }
   window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll, { passive: true });
   onScroll();
 
-  /* ===================== Mobile menu ===================== */
-  var burger = document.getElementById("burger");
+  /* ===================== Menu panel ===================== */
+  var navToggle = document.getElementById("navToggle");
+  var navPanel = document.getElementById("navPanel");
+  var navBackdrop = document.getElementById("navBackdrop");
   var navLinks = document.getElementById("navLinks");
-  function closeMenu() {
-    if (!burger || !navLinks) return;
-    burger.classList.remove("is-open");
-    navLinks.classList.remove("is-open");
-    burger.setAttribute("aria-expanded", "false");
+
+  function isMenuOpen() {
+    return !!(nav && nav.classList.contains("is-menu-open"));
   }
-  if (burger && navLinks) {
-    burger.addEventListener("click", function () {
-      var open = burger.classList.toggle("is-open");
-      navLinks.classList.toggle("is-open", open);
-      burger.setAttribute("aria-expanded", String(open));
+
+  function setMenuOpen(open) {
+    if (!navToggle || !navPanel || !nav) return;
+    nav.classList.toggle("is-menu-open", open);
+    navToggle.classList.toggle("is-open", open);
+    navToggle.setAttribute("aria-expanded", String(open));
+    navToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    navPanel.setAttribute("aria-hidden", String(!open));
+    if (navBackdrop) navBackdrop.setAttribute("aria-hidden", String(!open));
+  }
+
+  function closeMenu() { setMenuOpen(false); }
+
+  if (navToggle && navPanel) {
+    navToggle.addEventListener("click", function () {
+      setMenuOpen(!isMenuOpen());
     });
-    navLinks.querySelectorAll("a").forEach(function (a) {
-      a.addEventListener("click", closeMenu);
-    });
+    if (navBackdrop) navBackdrop.addEventListener("click", closeMenu);
+    if (navLinks) {
+      navLinks.querySelectorAll("a").forEach(function (a) {
+        a.addEventListener("click", closeMenu);
+      });
+    }
   }
 
   /* ===================== Portfolio filter ===================== */
@@ -149,9 +166,16 @@
     });
   }
   document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      if (isMenuOpen()) {
+        closeMenu();
+        return;
+      }
+      if (lightbox && lightbox.classList.contains("is-open")) closeLightbox();
+      return;
+    }
     if (!lightbox || !lightbox.classList.contains("is-open")) return;
-    if (e.key === "Escape") closeLightbox();
-    else if (e.key === "ArrowLeft") render(current - 1);
+    if (e.key === "ArrowLeft") render(current - 1);
     else if (e.key === "ArrowRight") render(current + 1);
   });
 

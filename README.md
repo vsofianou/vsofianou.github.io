@@ -3,7 +3,7 @@
 A free, single-page portfolio website for a loom-weaving artist. Plain HTML, CSS and
 vanilla JavaScript — no build step, no dependencies — designed to be hosted on **GitHub Pages**.
 
-Bilingual (English / Ελληνικά) with a language toggle in the top-right of the navigation.
+Bilingual (English / Ελληνικά) with a floating language toggle (top-right) and a menu button (top-left).
 
 ## Structure
 

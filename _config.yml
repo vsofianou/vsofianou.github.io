@@ -1,0 +1,8 @@
+# GitHub Pages (Jekyll) configuration.
+#
+# Files listed under `exclude` are kept in the Git repository but are NOT copied
+# into the published site, so they are never served by GitHub Pages and cannot
+# be downloaded by visitors (their URLs return 404).
+exclude:
+  - AGENTS.md      # local-only AI context; committed but not published
+  - README.md      # project docs; no need to serve to visitors
