@@ -229,7 +229,7 @@ img { max-width: 100%; display: block; }
   background-color: var(--accent-dark);
   background-image: url("images/hero.webp");
   background-size: cover;
-  background-position: center;
+  background-position: right bottom; /* keep bottom-right; crop top-left on resize */
   background-repeat: no-repeat;
 }
 

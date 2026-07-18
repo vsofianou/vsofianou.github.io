@@ -87,7 +87,8 @@ Change colors here; everything cascades from these variables.
 
 ### Hero & navigation
 
-- `.hero` is a full-viewport `cover` of `images/hero.webp`. Bottom-left signature block (~45vw):
+- `.hero` is a full-viewport `cover` of `images/hero.webp` (`background-position: right bottom`
+  so crop prefers top-left). Bottom-left signature block (~45vw):
   “Vasiliki Sofianou” in **Ephesis** (`--script`, bright gold `--gold-bright`; SIL OFL — Latin
   only, intentional exception to the Greek font rule), and underneath “Conceptual weaving” in
   **Ysabeau** (`--statement`). A gold scroll cue (↓) sits at the bottom center.
