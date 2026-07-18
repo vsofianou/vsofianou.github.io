@@ -14,7 +14,8 @@ Tone/aesthetic: quiet, gallery-like, image-first. Let the artwork breathe.
 ## Tech stack & hard constraints
 
 - **Plain HTML + CSS + vanilla JS. No framework, no build step, no bundler, no npm.**
-- **Zero runtime dependencies.** The only external resources are Google Fonts.
+- **External resources:** Google Fonts + Firebase Analytics CDN (`analytics.js`, modular SDK).
+  No other runtime deps. Analytics is skipped on `file://`.
 - Must keep working when `index.html` is opened directly from disk (`file://`). This is why
   translations live in a **`.js`** file (a global object), NOT a `.json` loaded via `fetch()` —
   `fetch()` is blocked on `file://` and would silently break the site.
@@ -29,6 +30,7 @@ vasiliki/
 ├── translations.js   # ALL user-visible strings (en + el) — edit copy here
 ├── styles.css        # Design system + layout (single stylesheet)
 ├── script.js         # Language toggle, floating menu, gallery filter, lightbox, footer year
+├── analytics.js      # Firebase Analytics (ES module; http(s) only)
 ├── images/
 │   ├── hero.webp     # Landing hero background (see Hero below)
 │   └── works/        # Artwork images go here (currently empty; gallery uses placeholders)

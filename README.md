@@ -1,9 +1,10 @@
 # Vasiliki — Weaving Artist Website
 
 A free, single-page portfolio website for a loom-weaving artist. Plain HTML, CSS and
-vanilla JavaScript — no build step, no dependencies — designed to be hosted on **GitHub Pages**.
+vanilla JavaScript — no build step, no npm — designed to be hosted on **GitHub Pages**.
 
 Bilingual (English / Ελληνικά) with a floating language toggle (top-right) and a menu button (top-left).
+Firebase Analytics (`analytics.js`) runs on the live/http site only.
 
 ## Structure
 
@@ -13,6 +14,7 @@ vasiliki/
 ├── translations.js   # All user-visible strings (edit text here)
 ├── styles.css        # Colours, fonts, layout (edit the design here)
 ├── script.js         # Language toggle, gallery filter, lightbox, menu
+├── analytics.js      # Firebase Analytics (skipped on file://)
 ├── images/
 │   └── works/        # Put artwork images here
 └── README.md
