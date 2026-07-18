@@ -9,7 +9,7 @@
  */
 window.I18N = {
   en: {
-    "meta.description": "Vasiliki — handwoven textile constructions made on the loom.",
+    "meta.description": "Vasiliki Sofianou — conceptual weaving and handwoven textile constructions made on the loom.",
 
     "nav.about": "About",
     "nav.works": "Works",
@@ -61,7 +61,7 @@ window.I18N = {
   },
 
   el: {
-    "meta.description": "Βασιλική — υφαντές κατασκευές φτιαγμένες στον αργαλειό.",
+    "meta.description": "Βασιλική Σοφιανού — εννοιολογική υφαντική και υφαντές κατασκευές φτιαγμένες στον αργαλειό.",
 
     "nav.about": "Βιογραφικό",
     "nav.works": "Έργα",

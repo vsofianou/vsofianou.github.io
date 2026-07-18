@@ -99,25 +99,15 @@ python3 -m http.server 8000
 
 ## Deploy to GitHub Pages
 
-1. Create a new repository on GitHub (e.g. `vasiliki`).
-2. Push this folder to it:
+Repo: [vsofianou/vsofianou](https://github.com/vsofianou/vsofianou) · live URL:
+`https://vsofianou.github.io/vsofianou/`
 
 ```bash
 cd vasiliki
-git init
-git add .
-git commit -m "Initial site"
-git branch -M main
-git remote add origin https://github.com/<your-username>/vasiliki.git
 git push -u origin main
 ```
 
-3. On GitHub: **Settings → Pages → Build and deployment**.
-   - **Source**: *Deploy from a branch*
-   - **Branch**: `main` / `/ (root)` → **Save**
-4. Wait ~1 minute. The site goes live at:
-
-   `https://<your-username>.github.io/vasiliki/`
+Then on GitHub: **Settings → Pages → Deploy from a branch → `main` / `/ (root)`**.
 
 No build or GitHub Actions workflow is required — GitHub Pages serves the static files directly.
 

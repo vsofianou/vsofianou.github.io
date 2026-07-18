@@ -31,6 +31,8 @@ vasiliki/
 ├── styles.css        # Design system + layout (single stylesheet)
 ├── script.js         # Language toggle, floating menu, gallery filter, lightbox, footer year
 ├── analytics.js      # Firebase Analytics (ES module; http(s) only)
+├── robots.txt        # Crawler rules + sitemap pointer
+├── sitemap.xml       # Single-URL sitemap for GitHub Pages
 ├── images/
 │   ├── hero.webp     # Landing hero background (see Hero below)
 │   └── works/        # Artwork images go here (currently empty; gallery uses placeholders)
@@ -102,6 +104,13 @@ Change colors here; everything cascades from these variables.
 - Keep `hero.webp` optimized (it was reduced from a 2.3 MB PNG to ~48 KB at 1536×1024). Prefer
   WebP, keep it small.
 
+### SEO
+
+- Canonical / OG / Twitter / JSON-LD `Person` live in `index.html` (absolute URLs for
+  `https://vsofianou.github.io/vsofianou/`). If the site moves to a custom domain, update those,
+  `robots.txt`, and `sitemap.xml` together.
+- Hero name is the page `<h1>`. Real copy, image alts, and exhibitions matter more than tags.
+
 ## Portfolio / gallery
 
 - Each piece is a `<figure class="gallery__item" data-category="…">` inside `#gallery`.
@@ -115,23 +124,13 @@ Change colors here; everything cascades from these variables.
 
 ## Deployment
 
-- **Repo:** `git@github.com-xerx:xerx/vasiliki.git` · **branch:** `main`.
+- **Repo:** `https://github.com/vsofianou/vsofianou.git` · **branch:** `main`.
 - **GitHub Pages:** Settings → Pages → Deploy from a branch → `main` / root. Live at
-  **`https://xerx.github.io/vasiliki/`**. No Actions workflow needed (static site).
-- **SSH gotcha (this machine has two GitHub accounts):** the repo belongs to the **`xerx`**
-  account (key `~/.ssh/xerx_id_rsa`). The default agent key `~/.ssh/id_rsa` belongs to
-  `ioanniskouts` and gets offered first, so a plain `git push` authenticates as the wrong user
-  and is **denied**. Push with the key forced explicitly:
-
-  ```bash
-  git -C ~/Projects/vasiliki push origin main \
-    # if needed prefix with:
-    # GIT_SSH_COMMAND="ssh -o IdentitiesOnly=yes -i ~/.ssh/xerx_id_rsa"
-  ```
-
-  The user **declined** a permanent `~/.ssh/config` edit (`IdentitiesOnly yes`) and a repo-local
-  `core.sshCommand`. So use the `GIT_SSH_COMMAND` prefix when pushing unless they've changed this.
+  **`https://vsofianou.github.io/vsofianou/`**. No Actions workflow needed (static site).
+- **SSH:** default `~/.ssh/id_rsa` is for `ioanniskouts`. For the **`vsofianou`** account, push
+  with a key that account trusts (or HTTPS + PAT). Do not use the `xerx` host alias for this repo.
 - Pushing to `main` is a protected action — expect an approval prompt and never force-push.
+- Former remote (`xerx/vasiliki`) is obsolete; do not push site updates there.
 
 ## Local preview
 

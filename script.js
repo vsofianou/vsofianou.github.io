@@ -35,6 +35,9 @@
       el.classList.toggle("is-active", el.getAttribute("data-lang") === lang);
     });
 
+    var ogLocale = document.querySelector('meta[property="og:locale"]');
+    if (ogLocale) ogLocale.setAttribute("content", lang === "el" ? "el_GR" : "en_US");
+
     try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
   }
 
