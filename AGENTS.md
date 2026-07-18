@@ -164,7 +164,7 @@ cd ~/Projects/vasiliki && python3 -m http.server 8000   # http://localhost:8000
 Real content still to be supplied by the owner (all currently placeholders):
 
 - `about.bio` — the short bio paragraph (statement text IS real; bio is not).
-- Contact email — `mailto:hello@example.com` in `index.html`.
+- Contact email — `mailto:vsofianou.art@gmail.com` in `index.html`.
 - Social links — Instagram / Facebook URLs in the Contact section.
 - Exhibitions — `exhibitions.item1..3` entries.
 - Real artwork images in `images/works/` (gallery uses placeholders for now).

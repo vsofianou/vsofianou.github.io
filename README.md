@@ -58,7 +58,7 @@ to English automatically.
 The email button uses `mailto:`. In `index.html` change:
 
 ```html
-<a class="btn" href="mailto:hello@example.com" ...>
+<a class="btn" href="mailto:vsofianou.art@gmail.com" ...>
 ```
 
 to the real address, and update the Instagram / Facebook URLs just below it.
