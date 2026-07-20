@@ -76,7 +76,7 @@ Change colors here; everything cascades from these variables.
 
 - `--sans` = **Inter** (body/UI)
 - `--statement` = **Ysabeau** (nav, section titles, gallery names, statement, hero subtitle)
-- `--script` = **Ephesis** (hero signature only — Latin; SIL OFL 1.1)
+- `--script` = **Tangerine** Regular (hero signature only — Latin; SIL OFL 1.1)
 - **HARD REQUIREMENT: any font used for content MUST include the basic *modern* Greek block
   (Unicode `U+0370–U+03FF`, the Google Fonts `greek` subset).** Otherwise Greek silently falls
   back to a different face and looks inconsistent.
@@ -93,7 +93,7 @@ Change colors here; everything cascades from these variables.
 
 - `.hero` is a full-viewport `cover` of `images/hero.webp` (`background-position: right bottom`
   so crop prefers top-left). Bottom-left signature block (~45vw):
-  “Vasiliki Sofianou” in **Ephesis** (`--script`, bright gold `--gold-bright`; SIL OFL — Latin
+  “Vasiliki Sofianou” in **Tangerine** (`--script`, bright gold `--gold-bright`; SIL OFL — Latin
   only, intentional exception to the Greek font rule), and underneath “Conceptual weaving” in
   **Ysabeau** (`--statement`). A gold scroll cue (↓) sits at the bottom center.
 - There is **no fixed nav bar**. Floating frosted controls: menu button (top-left) opens a small

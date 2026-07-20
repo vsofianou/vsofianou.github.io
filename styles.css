@@ -12,7 +12,7 @@
   --gold-dark: #a8781f;
   --sans: "Inter", system-ui, -apple-system, sans-serif;
   --statement: "Ysabeau", Georgia, serif;         /* headings, nav, statement; supports Greek */
-  --script: "Ephesis", cursive;                   /* hero signature only; Latin / SIL OFL */
+  --script: "Tangerine", cursive;                 /* hero signature only; Latin / SIL OFL */
   --maxw: 1120px;
   --radius: 4px;
 }
@@ -246,9 +246,9 @@ img { max-width: 100%; display: block; }
   margin: 0;
   font-family: var(--script);
   font-weight: 400;
-  /* ~15 glyphs → size so the line fills the 45vw box */
-  font-size: calc(45vw / 6.8);
-  line-height: 1.05;
+  /* Tangerine runs small; size so the line still fills ~45vw */
+  font-size: calc(45vw / 5.4);
+  line-height: 1.15;
   letter-spacing: 0.02em;
   white-space: nowrap;
   color: var(--gold-bright);
