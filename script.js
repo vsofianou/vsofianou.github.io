@@ -98,6 +98,18 @@
     }
   }
 
+  /* ===================== Exhibitions accordion (one open) ===================== */
+  var exhibits = document.querySelector(".exhibits");
+  if (exhibits) {
+    exhibits.addEventListener("toggle", function (e) {
+      var panel = e.target;
+      if (!panel.classList || !panel.classList.contains("exhibit") || !panel.open) return;
+      exhibits.querySelectorAll(".exhibit[open]").forEach(function (other) {
+        if (other !== panel) other.open = false;
+      });
+    }, true);
+  }
+
   /* ===================== Portfolio filter ===================== */
   var filters = document.getElementById("filters");
   var items = Array.prototype.slice.call(document.querySelectorAll(".gallery__item"));

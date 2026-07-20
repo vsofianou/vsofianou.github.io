@@ -64,7 +64,7 @@ Palette is derived from the hero image (deep ultramarine blue with a gold thread
 
 | Token | Value | Role |
 |-------|-------|------|
-| `--accent` | `#1f2c9c` | Primary ultramarine — buttons, filters, links, timeline year |
+| `--accent` | `#1f2c9c` | Primary ultramarine — buttons, filters, links, exhibition year |
 | `--accent-dark` | `#161f75` | Hover / darker primary |
 | `--gold` / `--gold-bright` / `--gold-dark` | `#c8912f` / `#d4a53a` / `#a8781f` | Thread gold; bright gold for hero signature; dark for hovers |
 | `--bg` / `--bg-alt` | `#f4f5fb` / `#e7e9f6` | Light cool backgrounds |
@@ -166,5 +166,6 @@ Real content still to be supplied by the owner (all currently placeholders):
 - `about.bio` — the short bio paragraph (statement text IS real; bio is not).
 - Contact email — `mailto:vsofianou.art@gmail.com` in `index.html`.
 - Social links — Instagram / Facebook URLs in the Contact section.
-- Exhibitions — `exhibitions.item1..3` entries.
+- Exhibitions — add a `.exhibit` block in `index.html` + `exhibitions.N.venue` / `.place` /
+  `.body` in both languages (`translations.js`). Year stays in the HTML `<time>`.
 - Real artwork images in `images/works/` (gallery uses placeholders for now).
