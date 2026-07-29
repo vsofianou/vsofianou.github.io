@@ -97,7 +97,7 @@
     <h2 class="section__title section__title--center" data-i18n="portfolio.title">Works</h2>
 
     <div class="filters" id="filters">
-      <button class="filter is-active" data-filter="all" data-i18n="filter.all">All</button>
+      <button class="filter is-active" data-filter="featured" data-i18n="filter.featured">Featured</button>
       <button class="filter" data-filter="wall" data-i18n="filter.wall">Wall hangings</button>
       <button class="filter" data-filter="sculptural" data-i18n="filter.sculptural">Sculptural</button>
       <button class="filter" data-filter="functional" data-i18n="filter.functional">Functional</button>
@@ -105,48 +105,40 @@
     </div>
 
     <div class="gallery" id="gallery">
-      <!-- Repeat this figure per artwork. Swap the placeholder div for: <img src="images/works/piece-1.webp" data-i18n-alt="work.1.name" alt="Untitled I" loading="lazy" /> -->
-      <figure class="gallery__item" data-category="wall">
-        <div class="placeholder placeholder--work">Work 01</div>
+      <!--
+        Per artwork: data-category + optional data-featured="true".
+        Cover thumb in the figure; extra images + description in .gallery__extra (hidden).
+      -->
+      <figure class="gallery__item" data-category="wall" data-featured="true" data-work="1">
+        <div class="gallery__thumb">
+          <img src="images/works/circles-of-life-1.webp" data-i18n-alt="work.1.name" alt="Circles of Life" width="672" height="1800" loading="lazy" />
+        </div>
         <figcaption>
-          <span class="gallery__name" data-i18n="work.1.name">Untitled I</span>
+          <span class="gallery__name" data-i18n="work.1.name">Circles of Life</span>
           <span class="gallery__meta" data-i18n="work.1.meta">Wool, linen · 2024</span>
         </figcaption>
+        <div class="gallery__extra" hidden>
+          <div class="gallery__images">
+            <img src="images/works/circles-of-life-1.webp" alt="" width="672" height="1800" />
+            <img src="images/works/circles-of-life-2.webp" alt="" width="1380" height="887" />
+          </div>
+          <p class="gallery__desc" data-i18n="work.1.desc"></p>
+        </div>
       </figure>
-      <figure class="gallery__item" data-category="sculptural">
-        <div class="placeholder placeholder--work">Work 02</div>
+      <figure class="gallery__item" data-category="wall" data-work="2">
+        <div class="gallery__thumb">
+          <img src="images/works/earth-never-stops-breathing-1.webp" data-i18n-alt="work.2.name" alt="Earth Never Stops Breathing" width="1205" height="296" loading="lazy" />
+        </div>
         <figcaption>
-          <span class="gallery__name" data-i18n="work.2.name">Untitled II</span>
-          <span class="gallery__meta" data-i18n="work.2.meta">Mixed fibres · 2024</span>
+          <span class="gallery__name" data-i18n="work.2.name">Earth Never Stops Breathing</span>
+          <span class="gallery__meta" data-i18n="work.2.meta">Wool, linen · 2024</span>
         </figcaption>
-      </figure>
-      <figure class="gallery__item" data-category="functional">
-        <div class="placeholder placeholder--work">Work 03</div>
-        <figcaption>
-          <span class="gallery__name" data-i18n="work.3.name">Untitled III</span>
-          <span class="gallery__meta" data-i18n="work.3.meta">Wool · 2023</span>
-        </figcaption>
-      </figure>
-      <figure class="gallery__item" data-category="experimental">
-        <div class="placeholder placeholder--work">Work 04</div>
-        <figcaption>
-          <span class="gallery__name" data-i18n="work.4.name">Untitled IV</span>
-          <span class="gallery__meta" data-i18n="work.4.meta">Paper, thread · 2023</span>
-        </figcaption>
-      </figure>
-      <figure class="gallery__item" data-category="wall">
-        <div class="placeholder placeholder--work">Work 05</div>
-        <figcaption>
-          <span class="gallery__name" data-i18n="work.5.name">Untitled V</span>
-          <span class="gallery__meta" data-i18n="work.5.meta">Linen · 2022</span>
-        </figcaption>
-      </figure>
-      <figure class="gallery__item" data-category="sculptural">
-        <div class="placeholder placeholder--work">Work 06</div>
-        <figcaption>
-          <span class="gallery__name" data-i18n="work.6.name">Untitled VI</span>
-          <span class="gallery__meta" data-i18n="work.6.meta">Wool, wire · 2022</span>
-        </figcaption>
+        <div class="gallery__extra" hidden>
+          <div class="gallery__images">
+            <img src="images/works/earth-never-stops-breathing-1.webp" alt="" width="1205" height="296" />
+          </div>
+          <p class="gallery__desc" data-i18n="work.2.desc"></p>
+        </div>
       </figure>
     </div>
   </section>
@@ -287,13 +279,22 @@ The work explored the unity of peoples, the constant movement of populations, an
     <p>&copy; <span id="year"></span> Vasiliki. <span data-i18n="footer.rights">All rights reserved.</span></p>
   </footer>
 
-  <!-- ===================== LIGHTBOX ===================== -->
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <button class="lightbox__close" id="lightboxClose" aria-label="Close">&times;</button>
-    <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Previous">&#8249;</button>
-    <div class="lightbox__stage" id="lightboxStage"></div>
-    <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Next">&#8250;</button>
-    <p class="lightbox__caption" id="lightboxCaption"></p>
+  <!-- ===================== WORK VIEWER ===================== -->
+  <div class="viewer" id="viewer" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="viewerName">
+    <div class="viewer__panel" id="viewerPanel">
+      <button class="viewer__close" id="viewerClose" type="button" aria-label="Close">&times;</button>
+      <div class="viewer__media">
+        <button class="viewer__nav viewer__nav--prev" id="viewerPrev" type="button" aria-label="Previous image">&#8249;</button>
+        <div class="viewer__stage" id="viewerStage"></div>
+        <button class="viewer__nav viewer__nav--next" id="viewerNext" type="button" aria-label="Next image">&#8250;</button>
+        <p class="viewer__counter" id="viewerCounter" hidden></p>
+      </div>
+      <div class="viewer__copy">
+        <h3 class="viewer__name" id="viewerName"></h3>
+        <p class="viewer__meta" id="viewerMeta"></p>
+        <p class="viewer__desc" id="viewerDesc"></p>
+      </div>
+    </div>
   </div>
 
   <script src="translations.js"></script>

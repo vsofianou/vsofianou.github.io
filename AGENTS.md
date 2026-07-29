@@ -29,14 +29,14 @@ vasiliki/
 ├── index.html        # Section markup; text referenced by i18n keys
 ├── translations.js   # ALL user-visible strings (en + el) — edit copy here
 ├── styles.css        # Design system + layout (single stylesheet)
-├── script.js         # Language toggle, floating menu, gallery filter, lightbox, footer year
+├── script.js         # Language toggle, floating menu, gallery filter, work viewer, footer year
 ├── analytics.js      # Firebase Analytics (ES module; http(s) only)
 ├── robots.txt        # Crawler rules + sitemap pointer
 ├── sitemap.xml       # Single-URL sitemap for GitHub Pages
 ├── images/
 │   ├── hero.webp     # Landing hero background (see Hero below)
 │   ├── about.webp    # About section portrait
-│   └── works/        # Artwork images go here (currently empty; gallery uses placeholders)
+│   └── works/        # Artwork images (slug filenames; gallery uses real pieces + more to come)
 ├── README.md         # Human-facing setup/editing/deploy guide
 └── AGENTS.md         # This file
 ```
@@ -114,14 +114,21 @@ Change colors here; everything cascades from these variables.
 
 ## Portfolio / gallery
 
-- Each piece is a `<figure class="gallery__item" data-category="…">` inside `#gallery`.
-- Categories (map to filter buttons): **`wall`, `sculptural`, `functional`, `experimental`**.
-- Filtering and the click-to-enlarge **lightbox** (keyboard + prev/next) are hand-rolled in
-  `script.js` — no library.
-- Currently the gallery shows grey **placeholders** (`Work 01`…`Work 06`). To add a real piece,
-  replace the placeholder `<div>` with `<img src="images/works/… .webp" data-i18n-alt="work.N.name"
-  alt="…" loading="lazy" />` and add `work.N.name` / `work.N.meta` to both languages in
-  `translations.js`. Optimize images (WebP, ~1200–1600px, lazy-loaded).
+- Each piece is a `<figure class="gallery__item" data-category="…" data-work="N">` inside
+  `#gallery`. Optional `data-featured="true"` puts it in the default **Featured** filter.
+- Filter tabs: **`featured`** (flag, default — no “All”), then **`wall`**, **`sculptural`**,
+  **`functional`**, **`experimental`** (by `data-category`). A piece can be featured *and*
+  belong to a category.
+- Cover thumb lives in a fixed-ratio `.gallery__thumb` frame. Extra images + description live
+  in a hidden `.gallery__extra` block (`.gallery__images` children + `.gallery__desc`) so the
+  site still works on `file://` with no `fetch`. Description elements stay empty in HTML; copy
+  comes from `translations.js`.
+- Click opens a **work viewer** (not a cross-work lightbox): carousel through that piece’s
+  images only (arrows / keyboard / swipe), plus title, meta, and a scrollable description.
+  Close and pick another from the grid.
+- i18n keys per piece: `work.N.name`, `work.N.meta`, `work.N.desc` (both `en` and `el`).
+- Image convention: slug files in `images/works/` (e.g. `circles-of-life-1.webp`), or per-work
+  folders `images/works/N/01.webp`…. Prefer WebP, ~1200–1600px, lazy-loaded on the grid cover.
 
 ## Deployment
 
@@ -158,10 +165,10 @@ cd ~/Projects/vasiliki && python3 -m http.server 8000   # http://localhost:8000
 - Do not add build tooling, frameworks, or runtime dependencies without explicit approval.
 - Do not hand-edit generated/minified assets (there are none — keep it that way).
 - Verify any new content font supports modern Greek before using it (see Greek rule above).
-- After edits, keep it lint-clean; test the language toggle, filter, and lightbox still work.
+- After edits, keep it lint-clean; test the language toggle, filters, and work viewer still work.
 
 ## Current state / outstanding placeholders
 
 Real content still to be supplied by the owner:
 
-- Real artwork images in `images/works/` (gallery uses placeholders for now).
+- More artwork images / pieces in `images/works/` (two wall hangings live so far).

@@ -13,7 +13,7 @@ vasiliki/
 ├── index.html        # Section markup (references text by key)
 ├── translations.js   # All user-visible strings (edit text here)
 ├── styles.css        # Colours, fonts, layout (edit the design here)
-├── script.js         # Language toggle, gallery filter, lightbox, menu
+├── script.js         # Language toggle, gallery filter, work viewer, menu
 ├── analytics.js      # Firebase Analytics (skipped on file://)
 ├── images/
 │   └── works/        # Put artwork images here
@@ -65,26 +65,34 @@ to the real address, and update the Instagram / Facebook URLs just below it.
 
 ## Adding artworks
 
-Each piece is a `<figure class="gallery__item">` inside `<div class="gallery">`. Replace the
-grey placeholder with a real image:
+Each piece is a `<figure class="gallery__item">` inside `<div class="gallery">`. The grid shows
+the cover image; click opens a viewer with all photos and the description.
 
 ```html
-<figure class="gallery__item" data-category="wall">
-  <img src="images/works/piece-01.webp" data-i18n-alt="work.1.name" alt="Untitled I" loading="lazy" />
+<figure class="gallery__item" data-category="wall" data-featured="true" data-work="1">
+  <div class="gallery__thumb">
+    <img src="images/works/1/01.webp" data-i18n-alt="work.1.name" alt="Untitled I" loading="lazy" />
+  </div>
   <figcaption>
     <span class="gallery__name" data-i18n="work.1.name">Untitled I</span>
     <span class="gallery__meta" data-i18n="work.1.meta">Wool, linen · 2024</span>
   </figcaption>
+  <div class="gallery__extra" hidden>
+    <div class="gallery__images">
+      <img src="images/works/1/01.webp" alt="" />
+      <img src="images/works/1/02.webp" alt="" />
+    </div>
+    <p class="gallery__desc" data-i18n="work.1.desc"></p>
+  </div>
 </figure>
 ```
 
-- Add the matching `work.N.name` / `work.N.meta` strings to **both** languages in
-  `translations.js`. Use `data-i18n-alt="<key>"` on the `<img>` to translate its `alt` text.
-- `data-category` must be one of: `wall`, `sculptural`, `functional`, `experimental`
-  (these map to the filter buttons; rename/add both here and in the `.filters` block if needed).
-- Put image files in `images/works/`.
-- Prefer **WebP or optimized JPG**, roughly **1200–1600px** on the long edge, to keep the
-  page fast. `loading="lazy"` defers off-screen images automatically.
+- Add `work.N.name` / `work.N.meta` / `work.N.desc` in **both** languages in `translations.js`.
+  Use `data-i18n-alt="<key>"` on the cover `<img>` for its `alt` text.
+- `data-category`: `wall`, `sculptural`, `functional`, or `experimental`.
+- `data-featured="true"` includes the piece in the default **Featured** tab (there is no All).
+- Put images in `images/works/N/` as `01.webp`, `02.webp`, … Prefer **WebP**, roughly
+  **1200–1600px** on the long edge. `loading="lazy"` on the cover defers off-screen loads.
 
 ## Preview locally
 
