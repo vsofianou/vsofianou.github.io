@@ -20,13 +20,13 @@ window.I18N = {
     "hero.tagline": "Handwoven constructions born on the loom.",
     "hero.cta": "View the work",
 
-    "about.portrait": "Portrait photo",
+    "about.portrait.alt": "Vasiliki Sofianou",
     "about.title": "About",
-    "about.bio": "Vasiliki is a textile artist working primarily on the loom, where thread, tension and time become sculptural constructions. [Replace this with a short bio — where she trained, how she came to weaving, and what drives the work.]",
-    "about.statement.p1": "Weaving is the language through which I explore the invisible connections that link people, nature, and time.",
-    "about.statement.p2": "Using threads, metal, wood, and natural materials that already bear the traces of their own lives, I create works in which memory, decay, and transformation take on a tangible form.",
-    "about.statement.p3": "I am interested in the moment when matter ceases to be merely an object and becomes a vessel of experience.",
-    "about.statement.p4": "My work navigates between light and darkness, presence and absence, the personal and the collective. It does not seek to provide answers, but rather to create a space for encounter, where the viewer is invited to recognize the invisible bonds that connect us to one another and to the world.",
+    "about.bio.p1": "My name is Vasiliki Sofianou; I am a visual artist whose primary medium is weaving, whilst my practice also extends to painting, installations and mixed media.",
+    "about.bio.p2": "For more than three decades, I have been developing a personal artistic exploration in which thread, wood, metal and natural materials act as vessels of memory, time and transformation.",
+    "about.bio.p3": "For me, weaving has never been merely a technique or a reference to tradition. It is the language through which I think, observe and explore the invisible connections between people, nature and time.",
+    "about.bio.p4": "I am drawn to the moment when matter ceases to be merely an object and becomes a vessel of experience. Each thread becomes the trace of a journey, each weave a meeting place, where memory, decay and transformation take shape.",
+    "about.bio.p5": "My work moves between light and darkness, presence and absence, the personal and the universal. I do not seek to provide answers; I wish to create a space where the viewer can slow down, observe more deeply and reconnect with that which usually remains unseen.",
 
     "portfolio.title": "Works",
     "filter.all": "All",
@@ -87,7 +87,7 @@ window.I18N = {
     "exhibitions.9.link": "Read on LiFO",
 
     "contact.title": "Contact",
-    "contact.lead": "For commissions, exhibitions or studio visits, get in touch.",
+    "contact.lead": "For exhibition proposals, collaborations, or information about my work, please contact me by email.",
     "contact.cta": "Send an email",
 
     "footer.rights": "All rights reserved."
@@ -105,13 +105,13 @@ window.I18N = {
     "hero.tagline": "Υφαντές κατασκευές που γεννιούνται στον αργαλειό.",
     "hero.cta": "Δείτε τα έργα",
 
-    "about.portrait": "Φωτογραφία πορτρέτου",
+    "about.portrait.alt": "Βασιλική Σοφιανού",
     "about.title": "Βιογραφικό",
-    "about.bio": "Η Βασιλική είναι εικαστικός της υφαντικής που εργάζεται κυρίως στον αργαλειό, όπου το νήμα, η ένταση και ο χρόνος γίνονται γλυπτικές κατασκευές. [Αντικαταστήστε το με ένα σύντομο βιογραφικό — πού σπούδασε, πώς ήρθε στην υφαντική και τι κινεί τη δουλειά της.]",
-    "about.statement.p1": "Η ύφανση είναι η γλώσσα μέσα από την οποία διερευνώ τις αόρατες σχέσεις που συνδέουν τον άνθρωπο, τη φύση και τον χρόνο.",
-    "about.statement.p2": "Μέσα από νήματα, μέταλλο, ξύλο και φυσικά υλικά που φέρουν ήδη τα ίχνη της ζωής τους, δημιουργώ έργα όπου η μνήμη, η φθορά και η μεταμόρφωση αποκτούν υλική υπόσταση.",
-    "about.statement.p3": "Με ενδιαφέρει η στιγμή κατά την οποία η ύλη παύει να είναι απλώς αντικείμενο και γίνεται φορέας εμπειρίας.",
-    "about.statement.p4": "Το έργο μου κινείται ανάμεσα στο φως και το σκοτάδι, την παρουσία και την απουσία, το προσωπικό και το συλλογικό. Δεν επιδιώκει να δώσει απαντήσεις, αλλά να δημιουργήσει έναν χώρο συνάντησης, όπου ο θεατής καλείται να αναγνωρίσει τους αόρατους δεσμούς που μας συνδέουν μεταξύ μας και με τον κόσμο.",
+    "about.bio.p1": "Είμαι η Vasiliki Sofianou, εικαστικός καλλιτέχνης με κύρια γλώσσα έκφρασης την ύφανση, ενώ η πρακτική μου εκτείνεται επίσης στη ζωγραφική, τις εγκαταστάσεις και τα μικτά μέσα.",
+    "about.bio.p2": "Για περισσότερες από τρεις δεκαετίες αναπτύσσω μια προσωπική καλλιτεχνική έρευνα, όπου το νήμα, το ξύλο, το μέταλλο και τα φυσικά υλικά λειτουργούν ως φορείς μνήμης, χρόνου και μεταμόρφωσης.",
+    "about.bio.p3": "Για μένα, η ύφανση δεν υπήρξε ποτέ απλώς μια τεχνική ή μια αναφορά στην παράδοση. Είναι η γλώσσα μέσα από την οποία σκέφτομαι, παρατηρώ και διερευνώ τις αόρατες συνδέσεις ανάμεσα στον άνθρωπο, τη φύση και τον χρόνο.",
+    "about.bio.p4": "Με ελκύει η στιγμή όπου η ύλη παύει να είναι απλώς αντικείμενο και γίνεται φορέας εμπειρίας. Κάθε νήμα γίνεται ίχνος μιας διαδρομής, κάθε πλέγμα ένας τόπος συνάντησης, όπου η μνήμη, η φθορά και η μεταμόρφωση αποκτούν μορφή.",
+    "about.bio.p5": "Το έργο μου κινείται ανάμεσα στο φως και το σκοτάδι, την παρουσία και την απουσία, το προσωπικό και το οικουμενικό. Δεν επιδιώκω να δώσω απαντήσεις· επιθυμώ να δημιουργώ έναν χώρο όπου ο θεατής μπορεί να επιβραδύνει, να παρατηρήσει πιο βαθιά και να επανασυνδεθεί με όσα συνήθως παραμένουν αθέατα.",
 
     "portfolio.title": "Έργα",
     "filter.all": "Όλα",
@@ -172,7 +172,7 @@ window.I18N = {
     "exhibitions.9.link": "Διαβάστε στη LiFO",
 
     "contact.title": "Επικοινωνία",
-    "contact.lead": "Για παραγγελίες, εκθέσεις ή επισκέψεις στο εργαστήριο, επικοινωνήστε.",
+    "contact.lead": "Για εκθεσιακές προτάσεις, συνεργασίες ή πληροφορίες σχετικά με το έργο μου, παρακαλώ επικοινωνήστε μέσω ηλεκτρονικού ταχυδρομείου.",
     "contact.cta": "Στείλτε email",
 
     "footer.rights": "Με επιφύλαξη παντός δικαιώματος."

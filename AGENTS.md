@@ -35,6 +35,7 @@ vasiliki/
 ├── sitemap.xml       # Single-URL sitemap for GitHub Pages
 ├── images/
 │   ├── hero.webp     # Landing hero background (see Hero below)
+│   ├── about.webp    # About section portrait
 │   └── works/        # Artwork images go here (currently empty; gallery uses placeholders)
 ├── README.md         # Human-facing setup/editing/deploy guide
 └── AGENTS.md         # This file
@@ -46,7 +47,7 @@ Footer.** (There is deliberately **no "Process" section** — it was dropped by 
 ## Internationalization (i18n)
 
 - All copy lives in `translations.js` as `window.I18N = { en: {...}, el: {...} }`, keyed by dot
-  strings (e.g. `nav.works`, `about.statement.p1`, `work.3.meta`).
+  strings (e.g. `nav.works`, `about.bio.p1`, `work.3.meta`).
 - HTML references a key with `data-i18n="<key>"` (sets `textContent`; on `<meta>` sets
   `content`). Use `data-i18n-alt="<key>"` on an `<img>` to translate its `alt`.
 - The visible text inside a tag is only a **fallback** shown before JS runs — keep it ≈ the
@@ -75,7 +76,7 @@ Change colors here; everything cascades from these variables.
 ### Fonts — and the Greek rule (IMPORTANT)
 
 - `--sans` = **Inter** (body/UI)
-- `--statement` = **Ysabeau** (nav, section titles, gallery names, statement, hero subtitle)
+- `--statement` = **Ysabeau** (nav, section titles, gallery names, hero subtitle)
 - `--script` = **Tangerine** Regular (hero signature only — Latin; SIL OFL 1.1)
 - **HARD REQUIREMENT: any font used for content MUST include the basic *modern* Greek block
   (Unicode `U+0370–U+03FF`, the Google Fonts `greek` subset).** Otherwise Greek silently falls
@@ -161,11 +162,6 @@ cd ~/Projects/vasiliki && python3 -m http.server 8000   # http://localhost:8000
 
 ## Current state / outstanding placeholders
 
-Real content still to be supplied by the owner (all currently placeholders):
+Real content still to be supplied by the owner:
 
-- `about.bio` — the short bio paragraph (statement text IS real; bio is not).
-- Contact email — `mailto:vsofianou.art@gmail.com` in `index.html`.
-- Social links — Instagram / Facebook URLs in the Contact section.
-- Exhibitions — add a `.exhibit` block in `index.html` + `exhibitions.N.venue` / `.place` /
-  `.body` in both languages (`translations.js`). Year stays in the HTML `<time>`.
 - Real artwork images in `images/works/` (gallery uses placeholders for now).

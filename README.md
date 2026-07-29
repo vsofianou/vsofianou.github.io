@@ -44,8 +44,8 @@ To change wording, edit the value in `translations.js` for **both** `en` and `el
 between the tags in `index.html` is only a fallback shown before JavaScript runs — keep it
 roughly equal to the English string.
 
-Search `translations.js` for `[Replace ...]` / `[Add ...]` / `[...]` placeholders and fill in
-the real bio, statement, exhibition entries, email and social links.
+Search `translations.js` for `[Replace ...]` / `[Add ...]` / `[...]` placeholders when adding
+new copy (e.g. artwork names). Edit existing strings in place for both `en` and `el`.
 
 ### Adding a language
 
