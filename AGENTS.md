@@ -36,7 +36,7 @@ vasiliki/
 ├── images/
 │   ├── hero.webp     # Landing hero background (see Hero below)
 │   ├── about.webp    # About section portrait
-│   └── works/        # Artwork images (slug filenames; gallery uses real pieces + more to come)
+│   └── works/        # Artwork images + local-only works_data.json (excluded from Pages)
 ├── README.md         # Human-facing setup/editing/deploy guide
 └── AGENTS.md         # This file
 ```
@@ -47,7 +47,7 @@ Footer.** (There is deliberately **no "Process" section** — it was dropped by 
 ## Internationalization (i18n)
 
 - All copy lives in `translations.js` as `window.I18N = { en: {...}, el: {...} }`, keyed by dot
-  strings (e.g. `nav.works`, `about.bio.p1`, `work.3.meta`).
+  strings (e.g. `nav.works`, `about.bio.p1`, `work.supreme.meta`).
 - HTML references a key with `data-i18n="<key>"` (sets `textContent`; on `<meta>` sets
   `content`). Use `data-i18n-alt="<key>"` on an `<img>` to translate its `alt`.
 - The visible text inside a tag is only a **fallback** shown before JS runs — keep it ≈ the
@@ -114,11 +114,18 @@ Change colors here; everything cascades from these variables.
 
 ## Portfolio / gallery
 
-- Each piece is a `<figure class="gallery__item" data-category="…" data-work="N">` inside
-  `#gallery`. Optional `data-featured="true"` puts it in the default **Featured** filter.
+- **Source of truth for copy (local only):** `images/works/works_data.json` — excluded from
+  GitHub Pages via `_config.yml`. Not loaded at runtime; chat/editing reference. Sync into
+  `index.html` + `translations.js` when adding works.
+- Structure: `featured` (id list only), then category arrays `wall` / `sculptural` /
+  `functional` with full records. Titles are **English-only** (same string in `en` and `el`).
+  Meta fields: `year`, `material_en`/`material_el`, `dimensions_en`/`dimensions_el`. Displayed
+  as `material · dimensions · year`.
+- Each piece is a `<figure class="gallery__item" data-category="…" data-work="<slug>">` inside
+  `#gallery`. Optional `data-featured="true"` (from the featured id list) puts it in the
+  default **Featured** filter.
 - Filter tabs: **`featured`** (flag, default — no “All”), then **`wall`**, **`sculptural`**,
-  **`functional`**, **`experimental`** (by `data-category`). A piece can be featured *and*
-  belong to a category.
+  **`functional`** (by `data-category`). A piece can be featured *and* belong to a category.
 - Cover thumb lives in a fixed-ratio `.gallery__thumb` frame. Extra images + description live
   in a hidden `.gallery__extra` block (`.gallery__images` children + `.gallery__desc`) so the
   site still works on `file://` with no `fetch`. Description elements stay empty in HTML; copy
@@ -126,9 +133,11 @@ Change colors here; everything cascades from these variables.
 - Click opens a **work viewer** (not a cross-work lightbox): carousel through that piece’s
   images only (arrows / keyboard / swipe), plus title, meta, and a scrollable description.
   Close and pick another from the grid.
-- i18n keys per piece: `work.N.name`, `work.N.meta`, `work.N.desc` (both `en` and `el`).
-- Image convention: slug files in `images/works/` (e.g. `circles-of-life-1.webp`), or per-work
-  folders `images/works/N/01.webp`…. Prefer WebP, ~1200–1600px, lazy-loaded on the grid cover.
+- i18n keys per piece: `work.<slug>.name`, `work.<slug>.meta`, `work.<slug>.desc` (both `en`
+  and `el`; name identical in both).
+- Image convention: slug files in `images/works/` — `{slug}-1.webp`, `{slug}-2.webp`, ….
+  JSON `cover` (1-based index) selects the grid thumb; viewer still lists all images in numeric
+  order. Prefer WebP, ~1200–1600px, lazy-loaded on the grid cover.
 
 ## Deployment
 
@@ -169,6 +178,5 @@ cd ~/Projects/vasiliki && python3 -m http.server 8000   # http://localhost:8000
 
 ## Current state / outstanding placeholders
 
-Real content still to be supplied by the owner:
-
-- More artwork images / pieces in `images/works/` (two wall hangings live so far).
+Works are being added in batches from `works_data.json`. Batch 1 (8 wall pieces) is live;
+sculptural / functional / remaining wall + featured ids still to land.

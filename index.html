@@ -101,45 +101,146 @@
       <button class="filter" data-filter="wall" data-i18n="filter.wall">Wall hangings</button>
       <button class="filter" data-filter="sculptural" data-i18n="filter.sculptural">Sculptural</button>
       <button class="filter" data-filter="functional" data-i18n="filter.functional">Functional</button>
-      <button class="filter" data-filter="experimental" data-i18n="filter.experimental">Experimental</button>
     </div>
 
     <div class="gallery" id="gallery">
       <!--
         Per artwork: data-category + optional data-featured="true".
         Cover thumb in the figure; extra images + description in .gallery__extra (hidden).
+        Source of truth for copy: images/works/works_data.json (not published).
       -->
-      <figure class="gallery__item" data-category="wall" data-featured="true" data-work="1">
+      <figure class="gallery__item" data-category="wall" data-work="circles-of-life">
         <div class="gallery__thumb">
-          <img src="images/works/circles-of-life-1.webp" data-i18n-alt="work.1.name" alt="Circles of Life" width="672" height="1800" loading="lazy" />
+          <img src="images/works/circles-of-life-2.webp" data-i18n-alt="work.circles-of-life.name" alt="Circles of Life" width="1380" height="887" loading="lazy" />
         </div>
         <figcaption>
-          <span class="gallery__name" data-i18n="work.1.name">Circles of Life</span>
-          <span class="gallery__meta" data-i18n="work.1.meta">Wool, linen · 2024</span>
+          <span class="gallery__name" data-i18n="work.circles-of-life.name">Circles of Life</span>
+          <span class="gallery__meta" data-i18n="work.circles-of-life.meta">Sheep's wool · 350 × 85 cm · 2012</span>
         </figcaption>
         <div class="gallery__extra" hidden>
           <div class="gallery__images">
             <img src="images/works/circles-of-life-1.webp" alt="" width="672" height="1800" />
             <img src="images/works/circles-of-life-2.webp" alt="" width="1380" height="887" />
           </div>
-          <p class="gallery__desc" data-i18n="work.1.desc"></p>
+          <p class="gallery__desc" data-i18n="work.circles-of-life.desc"></p>
         </div>
       </figure>
-      <figure class="gallery__item" data-category="wall" data-work="2">
+      <figure class="gallery__item" data-category="wall" data-work="earth-never-stops-breathing">
         <div class="gallery__thumb">
-          <img src="images/works/earth-never-stops-breathing-1.webp" data-i18n-alt="work.2.name" alt="Earth Never Stops Breathing" width="1205" height="296" loading="lazy" />
+          <img src="images/works/earth-never-stops-breathing-2.webp" data-i18n-alt="work.earth-never-stops-breathing.name" alt="Earth Never Stops Breathing" width="1205" height="296" loading="lazy" />
         </div>
         <figcaption>
-          <span class="gallery__name" data-i18n="work.2.name">Earth Never Stops Breathing</span>
-          <span class="gallery__meta" data-i18n="work.2.meta">Wool, linen · 2024</span>
+          <span class="gallery__name" data-i18n="work.earth-never-stops-breathing.name">Earth Never Stops Breathing</span>
+          <span class="gallery__meta" data-i18n="work.earth-never-stops-breathing.meta">Sheep's wool · 30 × 120 cm · 2017</span>
         </figcaption>
         <div class="gallery__extra" hidden>
           <div class="gallery__images">
             <img src="images/works/earth-never-stops-breathing-1.webp" alt="" width="1205" height="296" />
+            <img src="images/works/earth-never-stops-breathing-2.webp" alt="" width="580" height="122" />
           </div>
-          <p class="gallery__desc" data-i18n="work.2.desc"></p>
+          <p class="gallery__desc" data-i18n="work.earth-never-stops-breathing.desc"></p>
         </div>
       </figure>
+      <figure class="gallery__item" data-category="wall" data-work="intersections">
+        <div class="gallery__thumb">
+          <img src="images/works/intersections-2.webp" data-i18n-alt="work.intersections.name" alt="Intersections" width="1397" height="1103" loading="lazy" />
+        </div>
+        <figcaption>
+          <span class="gallery__name" data-i18n="work.intersections.name">Intersections</span>
+          <span class="gallery__meta" data-i18n="work.intersections.meta">Metal, wire mesh, brass, viscose · 111.5 x 64.5 cm · 2024</span>
+        </figcaption>
+        <div class="gallery__extra" hidden>
+          <div class="gallery__images">
+            <img src="images/works/intersections-1.webp" alt="" width="3875" height="2272" />
+            <img src="images/works/intersections-2.webp" alt="" width="1397" height="1103" />
+          </div>
+          <p class="gallery__desc" data-i18n="work.intersections.desc"></p>
+        </div>
+      </figure>
+      <figure class="gallery__item" data-category="wall" data-featured="true" data-work="memories-from-home">
+        <div class="gallery__thumb">
+          <img src="images/works/memories-from-home-2.webp" data-i18n-alt="work.memories-from-home.name" alt="Memories from Home" width="1200" height="1800" loading="lazy" />
+        </div>
+        <figcaption>
+          <span class="gallery__name" data-i18n="work.memories-from-home.name">Memories from Home</span>
+          <span class="gallery__meta" data-i18n="work.memories-from-home.meta">Wool, silk, cotton · 330 × 85 cm · 2016</span>
+        </figcaption>
+        <div class="gallery__extra" hidden>
+          <div class="gallery__images">
+            <img src="images/works/memories-from-home-1.webp" alt="" width="974" height="1574" />
+            <img src="images/works/memories-from-home-2.webp" alt="" width="1200" height="1800" />
+          </div>
+          <p class="gallery__desc" data-i18n="work.memories-from-home.desc"></p>
+        </div>
+      </figure>
+      <figure class="gallery__item" data-category="wall" data-work="my-true-self-is-revealed-to-me">
+        <div class="gallery__thumb">
+          <img src="images/works/my-true-self-is-revealed-to-me-2.webp" data-i18n-alt="work.my-true-self-is-revealed-to-me.name" alt="My True Self Is Revealed to Me" width="1678" height="1081" loading="lazy" />
+        </div>
+        <figcaption>
+          <span class="gallery__name" data-i18n="work.my-true-self-is-revealed-to-me.name">My True Self Is Revealed to Me</span>
+          <span class="gallery__meta" data-i18n="work.my-true-self-is-revealed-to-me.meta">Sheep's wool · 30 × 120 cm · 2017</span>
+        </figcaption>
+        <div class="gallery__extra" hidden>
+          <div class="gallery__images">
+            <img src="images/works/my-true-self-is-revealed-to-me-1.webp" alt="" width="1754" height="572" />
+            <img src="images/works/my-true-self-is-revealed-to-me-2.webp" alt="" width="1678" height="1081" />
+            <img src="images/works/my-true-self-is-revealed-to-me-3.webp" alt="" width="1567" height="248" />
+          </div>
+          <p class="gallery__desc" data-i18n="work.my-true-self-is-revealed-to-me.desc"></p>
+        </div>
+      </figure>
+      <figure class="gallery__item" data-category="wall" data-featured="true" data-work="opening-roads">
+        <div class="gallery__thumb">
+          <img src="images/works/opening-roads-2.webp" data-i18n-alt="work.opening-roads.name" alt="Opening Roads" width="2000" height="1333" loading="lazy" />
+        </div>
+        <figcaption>
+          <span class="gallery__name" data-i18n="work.opening-roads.name">Opening Roads</span>
+          <span class="gallery__meta" data-i18n="work.opening-roads.meta">Sheep's wool · 30 × 120 cm · 2017</span>
+        </figcaption>
+        <div class="gallery__extra" hidden>
+          <div class="gallery__images">
+            <img src="images/works/opening-roads-1.webp" alt="" width="1774" height="555" />
+            <img src="images/works/opening-roads-2.webp" alt="" width="2000" height="1333" />
+            <img src="images/works/opening-roads-3.webp" alt="" width="1574" height="254" />
+          </div>
+          <p class="gallery__desc" data-i18n="work.opening-roads.desc"></p>
+        </div>
+      </figure>
+      <figure class="gallery__item" data-category="wall" data-featured="true" data-work="supreme">
+        <div class="gallery__thumb">
+          <img src="images/works/supreme-2.webp" data-i18n-alt="work.supreme.name" alt="Supreme" width="1800" height="1139" loading="lazy" />
+        </div>
+        <figcaption>
+          <span class="gallery__name" data-i18n="work.supreme.name">Supreme</span>
+          <span class="gallery__meta" data-i18n="work.supreme.meta">Sheep's wool · 30 × 120 cm · 2017</span>
+        </figcaption>
+        <div class="gallery__extra" hidden>
+          <div class="gallery__images">
+            <img src="images/works/supreme-1.webp" alt="" width="1800" height="544" />
+            <img src="images/works/supreme-2.webp" alt="" width="1800" height="1139" />
+            <img src="images/works/supreme-3.webp" alt="" width="1610" height="242" />
+          </div>
+          <p class="gallery__desc" data-i18n="work.supreme.desc"></p>
+        </div>
+      </figure>
+      <figure class="gallery__item" data-category="wall" data-work="the-gates-of-language">
+        <div class="gallery__thumb">
+          <img src="images/works/the-gates-of-language-1.webp" data-i18n-alt="work.the-gates-of-language.name" alt="The Gates of Language" width="3142" height="1783" loading="lazy" />
+        </div>
+        <figcaption>
+          <span class="gallery__name" data-i18n="work.the-gates-of-language.name">The Gates of Language</span>
+          <span class="gallery__meta" data-i18n="work.the-gates-of-language.meta">Metal, cotton, silk · 62 × 108 cm · 2011</span>
+        </figcaption>
+        <div class="gallery__extra" hidden>
+          <div class="gallery__images">
+            <img src="images/works/the-gates-of-language-1.webp" alt="" width="3142" height="1783" />
+            <img src="images/works/the-gates-of-language-2.webp" alt="" width="1400" height="2000" />
+          </div>
+          <p class="gallery__desc" data-i18n="work.the-gates-of-language.desc"></p>
+        </div>
+      </figure>
+
     </div>
   </section>
 
