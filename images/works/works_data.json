@@ -23,7 +23,7 @@
         {
             "id": "circles-of-life",
             "title": "Circles of Life",
-            "cover": 2,
+            "cover": 1,
             "meta":{
                 "year": "2012",
                 "material_en": "Sheep's wool",
@@ -37,7 +37,7 @@
         {
             "id": "earth-never-stops-breathing",
             "title": "Earth Never Stops Breathing",
-            "cover": 2,
+            "cover": 1,
             "meta":{
                 "year": "2017",
                 "material_en": "Sheep's wool",
@@ -51,7 +51,7 @@
         {
             "id": "intersections",
             "title": "Intersections",
-            "cover": 2,
+            "cover": 1,
             "meta":{
                 "year": "2024",
                 "material_en": "Metal, wire mesh, brass, viscose",
@@ -65,7 +65,7 @@
         {
             "id": "memories-from-home",
             "title": "Memories from Home",
-            "cover": 2,
+            "cover": 1,
             "meta":{
                 "year": "2016",
                 "material_en": "Wool, silk, cotton",
@@ -79,7 +79,7 @@
         {
             "id": "my-true-self-is-revealed-to-me",
             "title": "My True Self Is Revealed to Me",
-            "cover": 2,
+            "cover": 1,
             "meta":{
                 "year": "2017",
                 "material_en": "Sheep's wool",
@@ -93,7 +93,7 @@
         {
             "id": "opening-roads",
             "title": "Opening Roads",
-            "cover": 2,
+            "cover": 1,
             "meta":{
                 "year": "2017",
                 "material_en": "Sheep's wool",
@@ -107,7 +107,7 @@
         {
             "id": "supreme",
             "title": "Supreme",
-            "cover": 2,
+            "cover": 1,
             "meta":{
                 "year": "2017",
                 "material_en": "Sheep's wool",
