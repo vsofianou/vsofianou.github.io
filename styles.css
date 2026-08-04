@@ -307,9 +307,10 @@ img { max-width: 100%; display: block; }
   border-left: 2px solid var(--gold);
   padding-left: 1.4rem;
 }
+.about .section__title { color: var(--accent); }
 .about__bio p {
   margin: 0 0 1rem;
-  color: var(--ink);
+  color: var(--accent-dark);
 }
 .about__bio p:last-child { margin-bottom: 0; }
 
@@ -383,13 +384,23 @@ img { max-width: 100%; display: block; }
   flex-direction: column;
   margin-top: 0.7rem;
 }
-.gallery__name { font-family: var(--statement); font-size: 1.15rem; }
+.portfolio .section__title { color: var(--accent); }
+.gallery__name {
+  font-family: var(--statement);
+  font-size: 1.15rem;
+  color: var(--accent-dark);
+}
 .gallery__meta { font-size: 0.8rem; color: var(--muted); letter-spacing: 0.03em; }
 .gallery__item > .placeholder { width: 100%; }
 
 /* ===================== Exhibitions ===================== */
 .exhibitions { background: var(--bg-alt); max-width: none; }
-.exhibitions .section__title { max-width: var(--maxw); margin-left: auto; margin-right: auto; }
+.exhibitions .section__title {
+  max-width: var(--maxw);
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--accent);
+}
 
 .exhibits {
   max-width: 720px;
@@ -507,7 +518,8 @@ img { max-width: 100%; display: block; }
 
 /* ===================== Contact ===================== */
 .contact { text-align: center; }
-.contact__lead { max-width: 480px; margin: 0 auto 2rem; color: var(--muted); }
+.contact .section__title { color: var(--accent); }
+.contact__lead { max-width: 480px; margin: 0 auto 2rem; color: var(--accent-dark); }
 .contact__social { margin-top: 2rem; display: flex; gap: 1.5rem; justify-content: center; }
 .contact__social a { color: var(--muted); text-decoration: none; font-size: 0.9rem; letter-spacing: 0.04em; }
 .contact__social a:hover { color: var(--accent); }

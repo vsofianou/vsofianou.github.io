@@ -4,6 +4,6 @@
 # into the published site, so they are never served by GitHub Pages and cannot
 # be downloaded by visitors (their URLs return 404).
 exclude:
-  - AGENTS.md      # local-only AI context; committed but not published
-  - README.md      # project docs; no need to serve to visitors
+  - AGENTS.md # local-only AI context; committed but not published
+  - README.md # project docs; no need to serve to visitors
   - images/works/works_data.json # works data; no need to serve to visitors
