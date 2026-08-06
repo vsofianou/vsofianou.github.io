@@ -119,13 +119,16 @@ Change colors here; everything cascades from these variables.
   `index.html` + `translations.js` when adding works.
 - Structure: `featured` (id list only), then category arrays `wall` / `sculptural` /
   `functional` with full records. Titles are **English-only** (same string in `en` and `el`).
-  Meta fields: `year`, `material_en`/`material_el`, `dimensions_en`/`dimensions_el`. Displayed
-  as `material · dimensions · year`.
+  Meta fields: `year`, `material_en`/`material_el`, optional `dimensions_en`/`dimensions_el`,
+  optional `extra_en`/`extra_el` (viewer only — not shown in gallery captions). Displayed
+  as `material · dimensions · year` (omit missing parts).
 - Each piece is a `<figure class="gallery__item" data-category="…" data-work="<slug>">` inside
-  `#gallery`. Optional `data-featured="true"` (from the featured id list) puts it in the
-  default **Featured** filter.
+  `#gallery`. Optional `data-featured="true"` puts it in the default **Featured** filter.
 - Filter tabs: **`featured`** (flag, default — no “All”), then **`wall`**, **`sculptural`**,
   **`functional`** (by `data-category`). A piece can be featured *and* belong to a category.
+- **Order:** `data-order-featured`, `data-order-wall`, and `data-order-sculptural` (0-based,
+  from `works_data.json`). `script.js` reorders visible gallery items when the active filter
+  changes — featured follows the `featured` array; wall/sculptural follow their category arrays.
 - Cover thumb lives in a fixed-ratio `.gallery__thumb` frame. Extra images + description live
   in a hidden `.gallery__extra` block (`.gallery__images` children + `.gallery__desc`) so the
   site still works on `file://` with no `fetch`. Description elements stay empty in HTML; copy
@@ -133,8 +136,8 @@ Change colors here; everything cascades from these variables.
 - Click opens a **work viewer** (not a cross-work lightbox): carousel through that piece’s
   images only (arrows / keyboard / swipe), plus title, meta, and a scrollable description.
   Close and pick another from the grid.
-- i18n keys per piece: `work.<slug>.name`, `work.<slug>.meta`, `work.<slug>.desc` (both `en`
-  and `el`; name identical in both).
+- i18n keys per piece: `work.<slug>.name`, `work.<slug>.meta`, optional `work.<slug>.extra`,
+  `work.<slug>.desc` (both `en` and `el`; name identical in both).
 - Image convention: slug files in `images/works/` — `{slug}-1.webp`, `{slug}-2.webp`, ….
   JSON `cover` (1-based index) selects the grid thumb; viewer still lists all images in numeric
   order. Prefer WebP, ~1200–1600px, lazy-loaded on the grid cover.
@@ -178,5 +181,5 @@ cd ~/Projects/vasiliki && python3 -m http.server 8000   # http://localhost:8000
 
 ## Current state / outstanding placeholders
 
-Works are being added in batches from `works_data.json`. Batch 1 (8 wall pieces) is live;
-sculptural / functional / remaining wall + featured ids still to land.
+Works are synced from `works_data.json`. Wall, sculptural, and functional categories are live;
+featured ids in JSON may reference works not yet added.

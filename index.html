@@ -104,60 +104,8 @@
     </div>
 
     <div class="gallery" id="gallery">
-      <!--
-        Per artwork: data-category + optional data-featured="true".
-        Cover thumb in the figure; extra images + description in .gallery__extra (hidden).
-        Source of truth for copy: images/works/works_data.json (not published).
-      -->
-      <figure class="gallery__item" data-category="wall" data-work="circles-of-life">
-        <div class="gallery__thumb">
-          <img src="images/works/circles-of-life-1.webp" data-i18n-alt="work.circles-of-life.name" alt="Circles of Life" width="672" height="1800" loading="lazy" />
-        </div>
-        <figcaption>
-          <span class="gallery__name" data-i18n="work.circles-of-life.name">Circles of Life</span>
-          <span class="gallery__meta" data-i18n="work.circles-of-life.meta">Sheep's wool · 350 × 85 cm · 2012</span>
-        </figcaption>
-        <div class="gallery__extra" hidden>
-          <div class="gallery__images">
-            <img src="images/works/circles-of-life-1.webp" alt="" width="672" height="1800" />
-            <img src="images/works/circles-of-life-2.webp" alt="" width="1380" height="887" />
-          </div>
-          <p class="gallery__desc" data-i18n="work.circles-of-life.desc"></p>
-        </div>
-      </figure>
-      <figure class="gallery__item" data-category="wall" data-work="earth-never-stops-breathing">
-        <div class="gallery__thumb">
-          <img src="images/works/earth-never-stops-breathing-1.webp" data-i18n-alt="work.earth-never-stops-breathing.name" alt="Earth Never Stops Breathing" width="1205" height="296" loading="lazy" />
-        </div>
-        <figcaption>
-          <span class="gallery__name" data-i18n="work.earth-never-stops-breathing.name">Earth Never Stops Breathing</span>
-          <span class="gallery__meta" data-i18n="work.earth-never-stops-breathing.meta">Sheep's wool · 30 × 120 cm · 2017</span>
-        </figcaption>
-        <div class="gallery__extra" hidden>
-          <div class="gallery__images">
-            <img src="images/works/earth-never-stops-breathing-1.webp" alt="" width="1205" height="296" />
-            <img src="images/works/earth-never-stops-breathing-2.webp" alt="" width="580" height="122" />
-          </div>
-          <p class="gallery__desc" data-i18n="work.earth-never-stops-breathing.desc"></p>
-        </div>
-      </figure>
-      <figure class="gallery__item" data-category="wall" data-work="intersections">
-        <div class="gallery__thumb">
-          <img src="images/works/intersections-1.webp" data-i18n-alt="work.intersections.name" alt="Intersections" width="3875" height="2272" loading="lazy" />
-        </div>
-        <figcaption>
-          <span class="gallery__name" data-i18n="work.intersections.name">Intersections</span>
-          <span class="gallery__meta" data-i18n="work.intersections.meta">Metal, wire mesh, brass, viscose · 111.5 x 64.5 cm · 2024</span>
-        </figcaption>
-        <div class="gallery__extra" hidden>
-          <div class="gallery__images">
-            <img src="images/works/intersections-1.webp" alt="" width="3875" height="2272" />
-            <img src="images/works/intersections-2.webp" alt="" width="1397" height="1103" />
-          </div>
-          <p class="gallery__desc" data-i18n="work.intersections.desc"></p>
-        </div>
-      </figure>
-      <figure class="gallery__item" data-category="wall" data-featured="true" data-work="memories-from-home">
+      <!-- Synced from images/works/works_data.json -->
+      <figure class="gallery__item" data-category="wall" data-work="memories-from-home" data-featured="true" data-order-featured="1" data-order-wall="0">
         <div class="gallery__thumb">
           <img src="images/works/memories-from-home-1.webp" data-i18n-alt="work.memories-from-home.name" alt="Memories from Home" width="974" height="1574" loading="lazy" />
         </div>
@@ -173,24 +121,86 @@
           <p class="gallery__desc" data-i18n="work.memories-from-home.desc"></p>
         </div>
       </figure>
-      <figure class="gallery__item" data-category="wall" data-work="my-true-self-is-revealed-to-me">
+      <figure class="gallery__item" data-category="wall" data-work="the-sea-wants-to-be-like-the-sky" data-order-wall="1">
         <div class="gallery__thumb">
-          <img src="images/works/my-true-self-is-revealed-to-me-1.webp" data-i18n-alt="work.my-true-self-is-revealed-to-me.name" alt="My True Self Is Revealed to Me" width="1754" height="572" loading="lazy" />
+          <img src="images/works/the-sea-wants-to-be-like-the-sky-1.webp" data-i18n-alt="work.the-sea-wants-to-be-like-the-sky.name" alt="The Sea Wants to Be Like the Sky" width="1220" height="280" loading="lazy" />
         </div>
         <figcaption>
-          <span class="gallery__name" data-i18n="work.my-true-self-is-revealed-to-me.name">My True Self Is Revealed to Me</span>
-          <span class="gallery__meta" data-i18n="work.my-true-self-is-revealed-to-me.meta">Sheep's wool · 30 × 120 cm · 2017</span>
+          <span class="gallery__name" data-i18n="work.the-sea-wants-to-be-like-the-sky.name">The Sea Wants to Be Like the Sky</span>
+          <span class="gallery__meta" data-i18n="work.the-sea-wants-to-be-like-the-sky.meta">Sheep's wool · 30 × 120 cm · 2017</span>
         </figcaption>
         <div class="gallery__extra" hidden>
           <div class="gallery__images">
-            <img src="images/works/my-true-self-is-revealed-to-me-1.webp" alt="" width="1754" height="572" />
-            <img src="images/works/my-true-self-is-revealed-to-me-2.webp" alt="" width="1678" height="1081" />
-            <img src="images/works/my-true-self-is-revealed-to-me-3.webp" alt="" width="1567" height="248" />
+            <img src="images/works/the-sea-wants-to-be-like-the-sky-1.webp" alt="" width="1220" height="280" />
+            <img src="images/works/the-sea-wants-to-be-like-the-sky-2.webp" alt="" width="1000" height="932" />
           </div>
-          <p class="gallery__desc" data-i18n="work.my-true-self-is-revealed-to-me.desc"></p>
+          <p class="gallery__desc" data-i18n="work.the-sea-wants-to-be-like-the-sky.desc"></p>
         </div>
       </figure>
-      <figure class="gallery__item" data-category="wall" data-featured="true" data-work="opening-roads">
+      <figure class="gallery__item" data-category="wall" data-work="the-same-soul" data-order-wall="2">
+        <div class="gallery__thumb">
+          <img src="images/works/the-same-soul-1.webp" data-i18n-alt="work.the-same-soul.name" alt="The Same Soul" width="1119" height="1600" loading="lazy" />
+        </div>
+        <figcaption>
+          <span class="gallery__name" data-i18n="work.the-same-soul.name">The Same Soul</span>
+          <span class="gallery__meta" data-i18n="work.the-same-soul.meta">Wool · 45 × 130 cm · 2018</span>
+        </figcaption>
+        <div class="gallery__extra" hidden>
+          <div class="gallery__images">
+            <img src="images/works/the-same-soul-1.webp" alt="" width="1119" height="1600" />
+            <img src="images/works/the-same-soul-2.webp" alt="" width="1046" height="437" />
+          </div>
+          <p class="gallery__desc" data-i18n="work.the-same-soul.desc"></p>
+        </div>
+      </figure>
+      <figure class="gallery__item" data-category="wall" data-work="the-eternal-spring-of-the-soul" data-order-wall="3">
+        <div class="gallery__thumb">
+          <img src="images/works/the-eternal-spring-of-the-soul-1.webp" data-i18n-alt="work.the-eternal-spring-of-the-soul.name" alt="The Eternal Spring of the Soul" width="4032" height="3024" loading="lazy" />
+        </div>
+        <figcaption>
+          <span class="gallery__name" data-i18n="work.the-eternal-spring-of-the-soul.name">The Eternal Spring of the Soul</span>
+          <span class="gallery__meta" data-i18n="work.the-eternal-spring-of-the-soul.meta">Metal, mesh, metallized yarns · 38 x 72 cm · 2025</span>
+        </figcaption>
+        <div class="gallery__extra" hidden>
+          <div class="gallery__images">
+            <img src="images/works/the-eternal-spring-of-the-soul-1.webp" alt="" width="4032" height="3024" />
+          </div>
+          <p class="gallery__desc" data-i18n="work.the-eternal-spring-of-the-soul.desc"></p>
+        </div>
+      </figure>
+      <figure class="gallery__item" data-category="wall" data-work="the-path-to-awe" data-order-wall="4">
+        <div class="gallery__thumb">
+          <img src="images/works/the-path-to-awe-1.webp" data-i18n-alt="work.the-path-to-awe.name" alt="The Path to Awe" width="1500" height="1000" loading="lazy" />
+        </div>
+        <figcaption>
+          <span class="gallery__name" data-i18n="work.the-path-to-awe.name">The Path to Awe</span>
+          <span class="gallery__meta" data-i18n="work.the-path-to-awe.meta">Coir yarn, metal · 300 × 80 cm · 2007</span>
+        </figcaption>
+        <div class="gallery__extra" hidden>
+          <div class="gallery__images">
+            <img src="images/works/the-path-to-awe-1.webp" alt="" width="1500" height="1000" />
+            <img src="images/works/the-path-to-awe-2.webp" alt="" width="1042" height="1500" />
+          </div>
+          <p class="gallery__desc" data-i18n="work.the-path-to-awe.desc"></p>
+        </div>
+      </figure>
+      <figure class="gallery__item" data-category="wall" data-work="the-gates-of-language" data-order-wall="5">
+        <div class="gallery__thumb">
+          <img src="images/works/the-gates-of-language-1.webp" data-i18n-alt="work.the-gates-of-language.name" alt="The Gates of Language" width="3142" height="1783" loading="lazy" />
+        </div>
+        <figcaption>
+          <span class="gallery__name" data-i18n="work.the-gates-of-language.name">The Gates of Language</span>
+          <span class="gallery__meta" data-i18n="work.the-gates-of-language.meta">Metal, cotton, silk · 62 × 108 cm · 2011</span>
+        </figcaption>
+        <div class="gallery__extra" hidden>
+          <div class="gallery__images">
+            <img src="images/works/the-gates-of-language-1.webp" alt="" width="3142" height="1783" />
+            <img src="images/works/the-gates-of-language-2.webp" alt="" width="1400" height="2000" />
+          </div>
+          <p class="gallery__desc" data-i18n="work.the-gates-of-language.desc"></p>
+        </div>
+      </figure>
+      <figure class="gallery__item" data-category="wall" data-work="opening-roads" data-featured="true" data-order-featured="5" data-order-wall="6">
         <div class="gallery__thumb">
           <img src="images/works/opening-roads-1.webp" data-i18n-alt="work.opening-roads.name" alt="Opening Roads" width="1774" height="555" loading="lazy" />
         </div>
@@ -207,7 +217,24 @@
           <p class="gallery__desc" data-i18n="work.opening-roads.desc"></p>
         </div>
       </figure>
-      <figure class="gallery__item" data-category="wall" data-featured="true" data-work="supreme">
+      <figure class="gallery__item" data-category="wall" data-work="my-true-self-is-revealed-to-me" data-order-wall="7">
+        <div class="gallery__thumb">
+          <img src="images/works/my-true-self-is-revealed-to-me-1.webp" data-i18n-alt="work.my-true-self-is-revealed-to-me.name" alt="My True Self Is Revealed to Me" width="1754" height="572" loading="lazy" />
+        </div>
+        <figcaption>
+          <span class="gallery__name" data-i18n="work.my-true-self-is-revealed-to-me.name">My True Self Is Revealed to Me</span>
+          <span class="gallery__meta" data-i18n="work.my-true-self-is-revealed-to-me.meta">Sheep's wool · 30 × 120 cm · 2017</span>
+        </figcaption>
+        <div class="gallery__extra" hidden>
+          <div class="gallery__images">
+            <img src="images/works/my-true-self-is-revealed-to-me-1.webp" alt="" width="1754" height="572" />
+            <img src="images/works/my-true-self-is-revealed-to-me-2.webp" alt="" width="1678" height="1081" />
+            <img src="images/works/my-true-self-is-revealed-to-me-3.webp" alt="" width="1567" height="248" />
+          </div>
+          <p class="gallery__desc" data-i18n="work.my-true-self-is-revealed-to-me.desc"></p>
+        </div>
+      </figure>
+      <figure class="gallery__item" data-category="wall" data-work="supreme" data-featured="true" data-order-featured="3" data-order-wall="8">
         <div class="gallery__thumb">
           <img src="images/works/supreme-1.webp" data-i18n-alt="work.supreme.name" alt="Supreme" width="1800" height="544" loading="lazy" />
         </div>
@@ -224,86 +251,55 @@
           <p class="gallery__desc" data-i18n="work.supreme.desc"></p>
         </div>
       </figure>
-      <figure class="gallery__item" data-category="wall" data-work="the-gates-of-language">
+      <figure class="gallery__item" data-category="wall" data-work="intersections" data-order-wall="9">
         <div class="gallery__thumb">
-          <img src="images/works/the-gates-of-language-1.webp" data-i18n-alt="work.the-gates-of-language.name" alt="The Gates of Language" width="3142" height="1783" loading="lazy" />
+          <img src="images/works/intersections-1.webp" data-i18n-alt="work.intersections.name" alt="Intersections" width="3875" height="2272" loading="lazy" />
         </div>
         <figcaption>
-          <span class="gallery__name" data-i18n="work.the-gates-of-language.name">The Gates of Language</span>
-          <span class="gallery__meta" data-i18n="work.the-gates-of-language.meta">Metal, cotton, silk · 62 × 108 cm · 2011</span>
+          <span class="gallery__name" data-i18n="work.intersections.name">Intersections</span>
+          <span class="gallery__meta" data-i18n="work.intersections.meta">Metal, wire mesh, brass, viscose · 111.5 x 64.5 cm · 2024</span>
         </figcaption>
         <div class="gallery__extra" hidden>
           <div class="gallery__images">
-            <img src="images/works/the-gates-of-language-1.webp" alt="" width="3142" height="1783" />
-            <img src="images/works/the-gates-of-language-2.webp" alt="" width="1400" height="2000" />
+            <img src="images/works/intersections-1.webp" alt="" width="3875" height="2272" />
+            <img src="images/works/intersections-2.webp" alt="" width="1397" height="1103" />
           </div>
-          <p class="gallery__desc" data-i18n="work.the-gates-of-language.desc"></p>
+          <p class="gallery__desc" data-i18n="work.intersections.desc"></p>
         </div>
       </figure>
-      <figure class="gallery__item" data-category="wall" data-work="the-eternal-spring-of-the-soul">
+      <figure class="gallery__item" data-category="wall" data-work="circles-of-life" data-order-wall="10">
         <div class="gallery__thumb">
-          <img src="images/works/the-eternal-spring-of-the-soul-1.webp" data-i18n-alt="work.the-eternal-spring-of-the-soul.name" alt="The Eternal Spring of the Soul" width="4032" height="3024" loading="lazy" />
+          <img src="images/works/circles-of-life-1.webp" data-i18n-alt="work.circles-of-life.name" alt="Circles of Life" width="672" height="1800" loading="lazy" />
         </div>
         <figcaption>
-          <span class="gallery__name" data-i18n="work.the-eternal-spring-of-the-soul.name">The Eternal Spring of the Soul</span>
-          <span class="gallery__meta" data-i18n="work.the-eternal-spring-of-the-soul.meta">Metal, mesh, metallized yarns · 38 x 72 cm · 2025</span>
+          <span class="gallery__name" data-i18n="work.circles-of-life.name">Circles of Life</span>
+          <span class="gallery__meta" data-i18n="work.circles-of-life.meta">Sheep's wool · 350 × 85 cm · 2012</span>
         </figcaption>
         <div class="gallery__extra" hidden>
           <div class="gallery__images">
-            <img src="images/works/the-eternal-spring-of-the-soul-1.webp" alt="" width="4032" height="3024" />
+            <img src="images/works/circles-of-life-1.webp" alt="" width="672" height="1800" />
+            <img src="images/works/circles-of-life-2.webp" alt="" width="1380" height="887" />
           </div>
-          <p class="gallery__desc" data-i18n="work.the-eternal-spring-of-the-soul.desc"></p>
+          <p class="gallery__desc" data-i18n="work.circles-of-life.desc"></p>
         </div>
       </figure>
-      <figure class="gallery__item" data-category="wall" data-work="the-path-to-awe">
+      <figure class="gallery__item" data-category="wall" data-work="earth-never-stops-breathing" data-order-wall="11">
         <div class="gallery__thumb">
-          <img src="images/works/the-path-to-awe-1.webp" data-i18n-alt="work.the-path-to-awe.name" alt="The Path to Awe" width="1500" height="1000" loading="lazy" />
+          <img src="images/works/earth-never-stops-breathing-1.webp" data-i18n-alt="work.earth-never-stops-breathing.name" alt="Earth Never Stops Breathing" width="1205" height="296" loading="lazy" />
         </div>
         <figcaption>
-          <span class="gallery__name" data-i18n="work.the-path-to-awe.name">The Path to Awe</span>
-          <span class="gallery__meta" data-i18n="work.the-path-to-awe.meta">Coir yarn, metal · 300 × 80 cm · 2007</span>
+          <span class="gallery__name" data-i18n="work.earth-never-stops-breathing.name">Earth Never Stops Breathing</span>
+          <span class="gallery__meta" data-i18n="work.earth-never-stops-breathing.meta">Sheep's wool · 30 × 120 cm · 2017</span>
         </figcaption>
         <div class="gallery__extra" hidden>
           <div class="gallery__images">
-            <img src="images/works/the-path-to-awe-1.webp" alt="" width="1500" height="1000" />
-            <img src="images/works/the-path-to-awe-2.webp" alt="" width="1042" height="1500" />
+            <img src="images/works/earth-never-stops-breathing-1.webp" alt="" width="1205" height="296" />
+            <img src="images/works/earth-never-stops-breathing-2.webp" alt="" width="580" height="122" />
           </div>
-          <p class="gallery__desc" data-i18n="work.the-path-to-awe.desc"></p>
+          <p class="gallery__desc" data-i18n="work.earth-never-stops-breathing.desc"></p>
         </div>
       </figure>
-      <figure class="gallery__item" data-category="wall" data-work="the-same-soul">
-        <div class="gallery__thumb">
-          <img src="images/works/the-same-soul-1.webp" data-i18n-alt="work.the-same-soul.name" alt="The Same Soul" width="1119" height="1600" loading="lazy" />
-        </div>
-        <figcaption>
-          <span class="gallery__name" data-i18n="work.the-same-soul.name">The Same Soul</span>
-          <span class="gallery__meta" data-i18n="work.the-same-soul.meta">Wool · 45 × 130 cm · 2018</span>
-        </figcaption>
-        <div class="gallery__extra" hidden>
-          <div class="gallery__images">
-            <img src="images/works/the-same-soul-1.webp" alt="" width="1119" height="1600" />
-            <img src="images/works/the-same-soul-2.webp" alt="" width="1046" height="437" />
-          </div>
-          <p class="gallery__desc" data-i18n="work.the-same-soul.desc"></p>
-        </div>
-      </figure>
-      <figure class="gallery__item" data-category="wall" data-work="the-sea-wants-to-be-like-the-sky">
-        <div class="gallery__thumb">
-          <img src="images/works/the-sea-wants-to-be-like-the-sky-1.webp" data-i18n-alt="work.the-sea-wants-to-be-like-the-sky.name" alt="The Sea Wants to Be Like the Sky" width="1220" height="280" loading="lazy" />
-        </div>
-        <figcaption>
-          <span class="gallery__name" data-i18n="work.the-sea-wants-to-be-like-the-sky.name">The Sea Wants to Be Like the Sky</span>
-          <span class="gallery__meta" data-i18n="work.the-sea-wants-to-be-like-the-sky.meta">Sheep's wool · 30 × 120 cm · 2017</span>
-        </figcaption>
-        <div class="gallery__extra" hidden>
-          <div class="gallery__images">
-            <img src="images/works/the-sea-wants-to-be-like-the-sky-1.webp" alt="" width="1220" height="280" />
-            <img src="images/works/the-sea-wants-to-be-like-the-sky-2.webp" alt="" width="1000" height="932" />
-          </div>
-          <p class="gallery__desc" data-i18n="work.the-sea-wants-to-be-like-the-sky.desc"></p>
-        </div>
-      </figure>
-      <figure class="gallery__item" data-category="wall" data-work="threads-of-a-web">
+      <figure class="gallery__item" data-category="wall" data-work="threads-of-a-web" data-order-wall="12">
         <div class="gallery__thumb">
           <img src="images/works/threads-of-a-web-1.webp" data-i18n-alt="work.threads-of-a-web.name" alt="Threads of a Web" width="1889" height="917" loading="lazy" />
         </div>
@@ -320,26 +316,7 @@
           <p class="gallery__desc" data-i18n="work.threads-of-a-web.desc"></p>
         </div>
       </figure>
-      <figure class="gallery__item" data-category="sculptural" data-work="life-after-life">
-        <div class="gallery__thumb">
-          <img src="images/works/life-after-life-1.webp" data-i18n-alt="work.life-after-life.name" alt="Life After Life" width="1530" height="2040" loading="lazy" />
-        </div>
-        <figcaption>
-          <span class="gallery__name" data-i18n="work.life-after-life.name">Life After Life</span>
-          <span class="gallery__meta" data-i18n="work.life-after-life.meta">Burnt branches, wool · 2010</span>
-        </figcaption>
-        <div class="gallery__extra" hidden>
-          <div class="gallery__images">
-            <img src="images/works/life-after-life-1.webp" alt="" width="1530" height="2040" />
-            <img src="images/works/life-after-life-2.webp" alt="" width="635" height="1500" />
-            <img src="images/works/life-after-life-3.webp" alt="" width="3000" height="3600" />
-            <img src="images/works/life-after-life-4.webp" alt="" width="9776" height="8186" />
-            <img src="images/works/life-after-life-5.webp" alt="" width="1500" height="426" />
-          </div>
-          <p class="gallery__desc" data-i18n="work.life-after-life.desc"></p>
-        </div>
-      </figure>
-      <figure class="gallery__item" data-category="sculptural" data-featured="true" data-work="metamorphosis">
+      <figure class="gallery__item" data-category="sculptural" data-work="metamorphosis" data-featured="true" data-order-featured="0" data-order-sculptural="0">
         <div class="gallery__thumb">
           <img src="images/works/metamorphosis-1.webp" data-i18n-alt="work.metamorphosis.name" alt="Metamorphosis" width="1377" height="901" loading="lazy" />
         </div>
@@ -352,27 +329,11 @@
             <img src="images/works/metamorphosis-1.webp" alt="" width="1377" height="901" />
             <img src="images/works/metamorphosis-2.webp" alt="" width="4032" height="3024" />
           </div>
+          <p class="gallery__extra-line" data-i18n="work.metamorphosis.extra">8th International Biennial in Madrid</p>
           <p class="gallery__desc" data-i18n="work.metamorphosis.desc"></p>
         </div>
       </figure>
-      <figure class="gallery__item" data-category="sculptural" data-featured="true" data-work="reconciliation">
-        <div class="gallery__thumb">
-          <img src="images/works/reconciliation-1.webp" data-i18n-alt="work.reconciliation.name" alt="Reconciliation" width="2000" height="1333" loading="lazy" />
-        </div>
-        <figcaption>
-          <span class="gallery__name" data-i18n="work.reconciliation.name">Reconciliation</span>
-          <span class="gallery__meta" data-i18n="work.reconciliation.meta">Metal, wool · 30 × 160 cm · 2012</span>
-        </figcaption>
-        <div class="gallery__extra" hidden>
-          <div class="gallery__images">
-            <img src="images/works/reconciliation-1.webp" alt="" width="2000" height="1333" />
-            <img src="images/works/reconciliation-2.webp" alt="" width="2000" height="1333" />
-            <img src="images/works/reconciliation-3.webp" alt="" width="2000" height="1333" />
-          </div>
-          <p class="gallery__desc" data-i18n="work.reconciliation.desc"></p>
-        </div>
-      </figure>
-      <figure class="gallery__item" data-category="sculptural" data-work="the-curvature-of-time">
+      <figure class="gallery__item" data-category="sculptural" data-work="the-curvature-of-time" data-order-sculptural="1">
         <div class="gallery__thumb">
           <img src="images/works/the-curvature-of-time-1.webp" data-i18n-alt="work.the-curvature-of-time.name" alt="The Curvature of Time" width="1061" height="618" loading="lazy" />
         </div>
@@ -389,22 +350,24 @@
           <p class="gallery__desc" data-i18n="work.the-curvature-of-time.desc"></p>
         </div>
       </figure>
-      <figure class="gallery__item" data-category="sculptural" data-work="trapped">
+      <figure class="gallery__item" data-category="sculptural" data-work="reconciliation" data-featured="true" data-order-featured="2" data-order-sculptural="2">
         <div class="gallery__thumb">
-          <img src="images/works/trapped-1.webp" data-i18n-alt="work.trapped.name" alt="Trapped" width="1971" height="3264" loading="lazy" />
+          <img src="images/works/reconciliation-1.webp" data-i18n-alt="work.reconciliation.name" alt="Reconciliation" width="2000" height="1333" loading="lazy" />
         </div>
         <figcaption>
-          <span class="gallery__name" data-i18n="work.trapped.name">Trapped</span>
-          <span class="gallery__meta" data-i18n="work.trapped.meta">Wool · 2021</span>
+          <span class="gallery__name" data-i18n="work.reconciliation.name">Reconciliation</span>
+          <span class="gallery__meta" data-i18n="work.reconciliation.meta">Metal, wool · 30 × 160 cm · 2012</span>
         </figcaption>
         <div class="gallery__extra" hidden>
           <div class="gallery__images">
-            <img src="images/works/trapped-1.webp" alt="" width="1971" height="3264" />
+            <img src="images/works/reconciliation-1.webp" alt="" width="2000" height="1333" />
+            <img src="images/works/reconciliation-2.webp" alt="" width="2000" height="1333" />
+            <img src="images/works/reconciliation-3.webp" alt="" width="2000" height="1333" />
           </div>
-          <p class="gallery__desc" data-i18n="work.trapped.desc"></p>
+          <p class="gallery__desc" data-i18n="work.reconciliation.desc"></p>
         </div>
       </figure>
-      <figure class="gallery__item" data-category="sculptural" data-work="tree-trunks-from-the-seabed">
+      <figure class="gallery__item" data-category="sculptural" data-work="tree-trunks-from-the-seabed" data-order-sculptural="3">
         <div class="gallery__thumb">
           <img src="images/works/tree-trunks-from-the-seabed-1.webp" data-i18n-alt="work.tree-trunks-from-the-seabed.name" alt="Tree Trunks from the Seabed" width="1013" height="1757" loading="lazy" />
         </div>
@@ -420,7 +383,7 @@
           <p class="gallery__desc" data-i18n="work.tree-trunks-from-the-seabed.desc"></p>
         </div>
       </figure>
-      <figure class="gallery__item" data-category="sculptural" data-featured="true" data-work="waterfall">
+      <figure class="gallery__item" data-category="sculptural" data-work="waterfall" data-featured="true" data-order-featured="4" data-order-sculptural="4">
         <div class="gallery__thumb">
           <img src="images/works/waterfall-1.webp" data-i18n-alt="work.waterfall.name" alt="WaterFall" width="2000" height="1333" loading="lazy" />
         </div>
@@ -433,6 +396,126 @@
             <img src="images/works/waterfall-1.webp" alt="" width="2000" height="1333" />
           </div>
           <p class="gallery__desc" data-i18n="work.waterfall.desc"></p>
+        </div>
+      </figure>
+      <figure class="gallery__item" data-category="sculptural" data-work="trapped" data-order-sculptural="5">
+        <div class="gallery__thumb">
+          <img src="images/works/trapped-1.webp" data-i18n-alt="work.trapped.name" alt="Trapped" width="1971" height="3264" loading="lazy" />
+        </div>
+        <figcaption>
+          <span class="gallery__name" data-i18n="work.trapped.name">Trapped</span>
+          <span class="gallery__meta" data-i18n="work.trapped.meta">Wool · 2021</span>
+        </figcaption>
+        <div class="gallery__extra" hidden>
+          <div class="gallery__images">
+            <img src="images/works/trapped-1.webp" alt="" width="1971" height="3264" />
+          </div>
+          <p class="gallery__desc" data-i18n="work.trapped.desc"></p>
+        </div>
+      </figure>
+      <figure class="gallery__item" data-category="sculptural" data-work="life-after-life" data-order-sculptural="6">
+        <div class="gallery__thumb">
+          <img src="images/works/life-after-life-1.webp" data-i18n-alt="work.life-after-life.name" alt="Life After Life" width="9776" height="8186" loading="lazy" />
+        </div>
+        <figcaption>
+          <span class="gallery__name" data-i18n="work.life-after-life.name">Life After Life</span>
+          <span class="gallery__meta" data-i18n="work.life-after-life.meta">Burnt branches, wool · 2010</span>
+        </figcaption>
+        <div class="gallery__extra" hidden>
+          <div class="gallery__images">
+            <img src="images/works/life-after-life-1.webp" alt="" width="9776" height="8186" />
+            <img src="images/works/life-after-life-2.webp" alt="" width="635" height="1500" />
+            <img src="images/works/life-after-life-3.webp" alt="" width="1500" height="426" />
+            <img src="images/works/life-after-life-4.webp" alt="" width="1530" height="2040" />
+            <img src="images/works/life-after-life-5.webp" alt="" width="3000" height="3600" />
+          </div>
+          <p class="gallery__desc" data-i18n="work.life-after-life.desc"></p>
+        </div>
+      </figure>
+      <figure class="gallery__item" data-category="functional" data-work="black-gray-line" data-order-functional="0">
+        <div class="gallery__thumb">
+          <img src="images/works/black-gray-line-1.webp" data-i18n-alt="work.black-gray-line.name" alt="Black & Gray Line" width="1165" height="1748" loading="lazy" />
+        </div>
+        <figcaption>
+          <span class="gallery__name" data-i18n="work.black-gray-line.name">Black & Gray Line</span>
+          <span class="gallery__meta" data-i18n="work.black-gray-line.meta">Sheep’s wool & velvet · 100 × 50 cm · 2018</span>
+        </figcaption>
+        <div class="gallery__extra" hidden>
+          <div class="gallery__images">
+            <img src="images/works/black-gray-line-1.webp" alt="" width="1165" height="1748" />
+          </div>
+        </div>
+      </figure>
+      <figure class="gallery__item" data-category="functional" data-work="off-white-black-line" data-order-functional="1">
+        <div class="gallery__thumb">
+          <img src="images/works/off-white-black-line-1.webp" data-i18n-alt="work.off-white-black-line.name" alt="Off-White & Black Line" width="1041" height="1650" loading="lazy" />
+        </div>
+        <figcaption>
+          <span class="gallery__name" data-i18n="work.off-white-black-line.name">Off-White & Black Line</span>
+          <span class="gallery__meta" data-i18n="work.off-white-black-line.meta">Wool & velvet · 100 × 50 cm · 2018</span>
+        </figcaption>
+        <div class="gallery__extra" hidden>
+          <div class="gallery__images">
+            <img src="images/works/off-white-black-line-1.webp" alt="" width="1041" height="1650" />
+          </div>
+        </div>
+      </figure>
+      <figure class="gallery__item" data-category="functional" data-work="gray-off-white" data-order-functional="2">
+        <div class="gallery__thumb">
+          <img src="images/works/gray-off-white-1.webp" data-i18n-alt="work.gray-off-white.name" alt="Gray & Off-White" width="1154" height="1584" loading="lazy" />
+        </div>
+        <figcaption>
+          <span class="gallery__name" data-i18n="work.gray-off-white.name">Gray & Off-White</span>
+          <span class="gallery__meta" data-i18n="work.gray-off-white.meta">Sheep’s wool & velvet · 100 × 50 cm · 2018</span>
+        </figcaption>
+        <div class="gallery__extra" hidden>
+          <div class="gallery__images">
+            <img src="images/works/gray-off-white-1.webp" alt="" width="1154" height="1584" />
+          </div>
+        </div>
+      </figure>
+      <figure class="gallery__item" data-category="functional" data-work="off-white-black" data-order-functional="3">
+        <div class="gallery__thumb">
+          <img src="images/works/off-white-black-1.webp" data-i18n-alt="work.off-white-black.name" alt="Off-White & Black" width="1551" height="1156" loading="lazy" />
+        </div>
+        <figcaption>
+          <span class="gallery__name" data-i18n="work.off-white-black.name">Off-White & Black</span>
+          <span class="gallery__meta" data-i18n="work.off-white-black.meta">Wool & velvet · 60 x 80 cm · 2018</span>
+        </figcaption>
+        <div class="gallery__extra" hidden>
+          <div class="gallery__images">
+            <img src="images/works/off-white-black-line-1.webp" alt="" width="1041" height="1650" />
+            <img src="images/works/off-white-black-1.webp" alt="" width="1551" height="1156" />
+          </div>
+        </div>
+      </figure>
+      <figure class="gallery__item" data-category="functional" data-work="chairs-cotton" data-order-functional="4">
+        <div class="gallery__thumb">
+          <img src="images/works/chairs-cotton-1.webp" data-i18n-alt="work.chairs-cotton.name" alt="Chairs Cotton" width="4998" height="3789" loading="lazy" />
+        </div>
+        <figcaption>
+          <span class="gallery__name" data-i18n="work.chairs-cotton.name">Chairs Cotton</span>
+          <span class="gallery__meta" data-i18n="work.chairs-cotton.meta">2016</span>
+        </figcaption>
+        <div class="gallery__extra" hidden>
+          <div class="gallery__images">
+            <img src="images/works/chairs-cotton-1.webp" alt="" width="4998" height="3789" />
+          </div>
+        </div>
+      </figure>
+      <figure class="gallery__item" data-category="functional" data-work="chair-velvet" data-order-functional="5">
+        <div class="gallery__thumb">
+          <img src="images/works/chair-velvet-1.webp" data-i18n-alt="work.chair-velvet.name" alt="Chair Velvet" width="4000" height="6000" loading="lazy" />
+        </div>
+        <figcaption>
+          <span class="gallery__name" data-i18n="work.chair-velvet.name">Chair Velvet</span>
+          <span class="gallery__meta" data-i18n="work.chair-velvet.meta">2016</span>
+        </figcaption>
+        <div class="gallery__extra" hidden>
+          <div class="gallery__images">
+            <img src="images/works/chair-velvet-1.webp" alt="" width="4000" height="6000" />
+            <img src="images/works/chair-velvet-2.webp" alt="" width="1536" height="1816" />
+          </div>
         </div>
       </figure>
 
@@ -587,7 +670,7 @@ The work explored the unity of peoples, the constant movement of populations, an
       </div>
       <div class="viewer__copy">
         <h3 class="viewer__name" id="viewerName"></h3>
-        <p class="viewer__meta" id="viewerMeta"></p>
+        <p class="viewer__meta" id="viewerExtra" hidden></p>
         <p class="viewer__desc" id="viewerDesc"></p>
       </div>
     </div>

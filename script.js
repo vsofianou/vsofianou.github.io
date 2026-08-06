@@ -112,15 +112,40 @@
 
   /* ===================== Portfolio filter ===================== */
   var filters = document.getElementById("filters");
+  var gallery = document.getElementById("gallery");
   var items = Array.prototype.slice.call(document.querySelectorAll(".gallery__item"));
 
+  function itemMatchesFilter(item, cat) {
+    return cat === "featured"
+      ? item.getAttribute("data-featured") === "true"
+      : item.getAttribute("data-category") === cat;
+  }
+
+  function orderKeyForFilter(cat) {
+    if (cat === "featured") return "data-order-featured";
+    if (cat === "wall") return "data-order-wall";
+    if (cat === "functional") return "data-order-functional";
+    return "data-order-sculptural";
+  }
+
   function applyFilter(cat) {
+    if (!gallery) return;
+    var orderKey = orderKeyForFilter(cat);
+    var visible = [];
+    var hidden = [];
+
     items.forEach(function (item) {
-      var show = cat === "featured"
-        ? item.getAttribute("data-featured") === "true"
-        : item.getAttribute("data-category") === cat;
-      item.classList.toggle("is-hidden", !show);
+      if (itemMatchesFilter(item, cat)) visible.push(item);
+      else hidden.push(item);
     });
+
+    visible.sort(function (a, b) {
+      return parseInt(a.getAttribute(orderKey), 10) - parseInt(b.getAttribute(orderKey), 10);
+    });
+
+    visible.forEach(function (item) { item.classList.remove("is-hidden"); });
+    hidden.forEach(function (item) { item.classList.add("is-hidden"); });
+    visible.concat(hidden).forEach(function (item) { gallery.appendChild(item); });
   }
 
   if (filters) {
@@ -141,7 +166,7 @@
   var viewerPanel = document.getElementById("viewerPanel");
   var viewerStage = document.getElementById("viewerStage");
   var viewerName = document.getElementById("viewerName");
-  var viewerMeta = document.getElementById("viewerMeta");
+  var viewerExtra = document.getElementById("viewerExtra");
   var viewerDesc = document.getElementById("viewerDesc");
   var viewerCounter = document.getElementById("viewerCounter");
   var btnClose = document.getElementById("viewerClose");
@@ -189,10 +214,14 @@
     mediaIndex = 0;
 
     var nameEl = item.querySelector(".gallery__name");
-    var metaEl = item.querySelector(".gallery__meta");
+    var extraEl = item.querySelector(".gallery__extra-line");
     var descEl = item.querySelector(".gallery__desc");
     if (viewerName) viewerName.textContent = nameEl ? nameEl.textContent : "";
-    if (viewerMeta) viewerMeta.textContent = metaEl ? metaEl.textContent : "";
+    if (viewerExtra) {
+      var extraText = extraEl ? extraEl.textContent.trim() : "";
+      viewerExtra.textContent = extraText;
+      viewerExtra.hidden = !extraText;
+    }
     if (viewerDesc) viewerDesc.textContent = descEl ? descEl.textContent : "";
 
     renderMedia(0);

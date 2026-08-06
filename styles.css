@@ -442,7 +442,7 @@ img { max-width: 100%; display: block; }
 .exhibit__venue {
   font-family: var(--statement);
   font-size: 1.15rem;
-  color: var(--ink);
+  color: var(--accent);
   line-height: 1.4;
 }
 
@@ -644,6 +644,7 @@ img { max-width: 100%; display: block; }
   letter-spacing: 0.03em;
   color: rgba(220, 231, 241, 0.65);
 }
+.viewer__meta[hidden] { display: none; }
 .viewer__desc {
   margin: 0;
   font-size: 0.98rem;
