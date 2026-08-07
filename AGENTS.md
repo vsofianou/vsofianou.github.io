@@ -133,9 +133,11 @@ Change colors here; everything cascades from these variables.
   in a hidden `.gallery__extra` block (`.gallery__images` children + `.gallery__desc`) so the
   site still works on `file://` with no `fetch`. Description elements stay empty in HTML; copy
   comes from `translations.js`.
-- Click opens a **work viewer** (not a cross-work lightbox): carousel through that piece’s
-  images only (arrows / keyboard / swipe), plus title, meta, and a scrollable description.
-  Close and pick another from the grid.
+- Click opens an **immersive work viewer** (not a cross-work lightbox): near-fullscreen image
+  (`object-fit: contain`) with the title visible on open. Optional extra + description sit
+  below; a scroll cue appears only when that detail copy exists. Carousel is per piece only
+  (arrows / keyboard / swipe). Close and pick another from the grid. No third-party lightbox;
+  pinch-zoom is out of scope unless added later.
 - i18n keys per piece: `work.<slug>.name`, `work.<slug>.meta`, optional `work.<slug>.extra`,
   `work.<slug>.desc` (both `en` and `el`; name identical in both).
 - Image convention: slug files in `images/works/` — `{slug}-1.webp`, `{slug}-2.webp`, ….

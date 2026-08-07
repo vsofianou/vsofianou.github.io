@@ -660,16 +660,20 @@ The work explored the unity of peoples, the constant movement of populations, an
 
   <!-- ===================== WORK VIEWER ===================== -->
   <div class="viewer" id="viewer" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="viewerName">
+    <button class="viewer__close" id="viewerClose" type="button" aria-label="Close">&times;</button>
     <div class="viewer__panel" id="viewerPanel">
-      <button class="viewer__close" id="viewerClose" type="button" aria-label="Close">&times;</button>
       <div class="viewer__media">
         <button class="viewer__nav viewer__nav--prev" id="viewerPrev" type="button" aria-label="Previous image">&#8249;</button>
         <div class="viewer__stage" id="viewerStage"></div>
         <button class="viewer__nav viewer__nav--next" id="viewerNext" type="button" aria-label="Next image">&#8250;</button>
         <p class="viewer__counter" id="viewerCounter" hidden></p>
-      </div>
-      <div class="viewer__copy">
         <h3 class="viewer__name" id="viewerName"></h3>
+        <button class="viewer__cue" id="viewerCue" type="button" hidden>
+          <span class="viewer__cue-icon" aria-hidden="true">↓</span>
+          <span data-i18n="viewer.scroll">Scroll for details</span>
+        </button>
+      </div>
+      <div class="viewer__copy" id="viewerCopy" hidden>
         <p class="viewer__meta" id="viewerExtra" hidden></p>
         <p class="viewer__desc" id="viewerDesc"></p>
       </div>

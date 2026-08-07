@@ -165,6 +165,8 @@
   var viewer = document.getElementById("viewer");
   var viewerPanel = document.getElementById("viewerPanel");
   var viewerStage = document.getElementById("viewerStage");
+  var viewerCopy = document.getElementById("viewerCopy");
+  var viewerCue = document.getElementById("viewerCue");
   var viewerName = document.getElementById("viewerName");
   var viewerExtra = document.getElementById("viewerExtra");
   var viewerDesc = document.getElementById("viewerDesc");
@@ -177,6 +179,15 @@
 
   function isViewerOpen() {
     return !!(viewer && viewer.classList.contains("is-open"));
+  }
+
+  function syncViewerCue() {
+    if (!viewerCue || !viewerPanel || viewerCue.hidden) return;
+    viewerCue.classList.toggle("is-faded", viewerPanel.scrollTop > 48);
+  }
+
+  function workHasDetails(extraText, descText) {
+    return !!(extraText || (descText && descText.trim()));
   }
 
   function collectMedia(item) {
@@ -216,13 +227,21 @@
     var nameEl = item.querySelector(".gallery__name");
     var extraEl = item.querySelector(".gallery__extra-line");
     var descEl = item.querySelector(".gallery__desc");
+    var extraText = extraEl ? extraEl.textContent.trim() : "";
+    var descText = descEl ? descEl.textContent : "";
+    var hasDetails = workHasDetails(extraText, descText);
+
     if (viewerName) viewerName.textContent = nameEl ? nameEl.textContent : "";
     if (viewerExtra) {
-      var extraText = extraEl ? extraEl.textContent.trim() : "";
       viewerExtra.textContent = extraText;
       viewerExtra.hidden = !extraText;
     }
-    if (viewerDesc) viewerDesc.textContent = descEl ? descEl.textContent : "";
+    if (viewerDesc) viewerDesc.textContent = descText;
+    if (viewerCopy) viewerCopy.hidden = !hasDetails;
+    if (viewerCue) {
+      viewerCue.hidden = !hasDetails;
+      viewerCue.classList.remove("is-faded");
+    }
 
     renderMedia(0);
     if (viewerPanel) viewerPanel.scrollTop = 0;
@@ -252,10 +271,13 @@
     e.stopPropagation();
     renderMedia(mediaIndex + 1);
   });
-  if (viewer) {
-    viewer.addEventListener("click", function (e) {
-      if (e.target === viewer) closeViewer();
+  if (viewerCue && viewerCopy) {
+    viewerCue.addEventListener("click", function () {
+      viewerCopy.scrollIntoView({ behavior: "smooth", block: "start" });
     });
+  }
+  if (viewerPanel) {
+    viewerPanel.addEventListener("scroll", syncViewerCue, { passive: true });
   }
 
   /* Swipe on stage for prev/next image */

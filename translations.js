@@ -34,6 +34,8 @@ window.I18N = {
     "filter.sculptural": "Sculptural",
     "filter.functional": "Functional",
 
+    "viewer.scroll": "Scroll for details",
+
     "work.memories-from-home.name": "Memories from Home",
     "work.memories-from-home.meta": "Wool, silk, cotton · 330 × 85 cm · 2016",
     "work.memories-from-home.desc": "I don’t remember Home.\nAnd yet I recognize it.\nEvery time my soul falls silent,\nI hear its rooms opening up inside me.\nIt has no walls. It has no doors.\nIt is not inhabited by people,\nbut by that which people forget they are.\nIt is made of all the forms\nthat Love took on before it had a name.\n\nThe shapes are parallelograms...\njust as everything exists in parallel.\nSmall and large.\nEverything is born within something else,\njust as memories are born within memories.\nNone ends where it begins.\nBecause nothing exists on its own.\nWithin the first, the next lives.\nWithin yesterday, tomorrow already breathes.\nAnd deep within, at the center of it all,\nthe Eternal sits in silence.\n\nBlue is not a color.\nIt is a state of being.\nIt is the memory of the sky before we look at it.\nIt is the sea before it has shores.\nIt is the gaze of the soul\nwhen it returns to itself.\nAnd as blue unfolds,\nwhite comes to remember it.\n\nThey say memories look back.\nThat’s not true.\nThere are memories still waiting to happen.\nHomes that already remember us, even before we arrive.\nHugs that exist in the future,\nyet the soul has always recognized them.\nBecause memory does not obey time.\nIt obeys only Love.\n\nThis work speaks of the Home\nthat has never left me.\nThere, where everything I have been,\neverything I am, and everything I will one day become,\nare not separate lives.\nThey are a single Thread that continues to weave\nthe eternal memory of the Return.",
@@ -179,6 +181,8 @@ window.I18N = {
     "filter.wall": "Επιτοίχια",
     "filter.sculptural": "Γλυπτικά",
     "filter.functional": "Χρηστικά",
+
+    "viewer.scroll": "Κύλιση για λεπτομέρειες",
 
     "work.memories-from-home.name": "Memories from Home",
     "work.memories-from-home.meta": "Μαλλί, μετάξι, βαμβάκι · 330 × 85 εκ. · 2016",
