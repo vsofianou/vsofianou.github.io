@@ -186,8 +186,8 @@
     viewerCue.classList.toggle("is-faded", viewerPanel.scrollTop > 48);
   }
 
-  function workHasDetails(extraText, descText) {
-    return !!(extraText || (descText && descText.trim()));
+  function workHasDescription(descText) {
+    return !!(descText && descText.trim());
   }
 
   function collectMedia(item) {
@@ -229,7 +229,7 @@
     var descEl = item.querySelector(".gallery__desc");
     var extraText = extraEl ? extraEl.textContent.trim() : "";
     var descText = descEl ? descEl.textContent : "";
-    var hasDetails = workHasDetails(extraText, descText);
+    var hasDescription = workHasDescription(descText);
 
     if (viewerName) viewerName.textContent = nameEl ? nameEl.textContent : "";
     if (viewerExtra) {
@@ -237,9 +237,9 @@
       viewerExtra.hidden = !extraText;
     }
     if (viewerDesc) viewerDesc.textContent = descText;
-    if (viewerCopy) viewerCopy.hidden = !hasDetails;
+    if (viewerCopy) viewerCopy.hidden = !hasDescription;
     if (viewerCue) {
-      viewerCue.hidden = !hasDetails;
+      viewerCue.hidden = !hasDescription;
       viewerCue.classList.remove("is-faded");
     }
 
