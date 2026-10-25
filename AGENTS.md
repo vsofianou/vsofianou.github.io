@@ -27,16 +27,17 @@ Tone/aesthetic: quiet, gallery-like, image-first. Let the artwork breathe.
 ```text
 vasiliki/
 ├── index.html        # Section markup; text referenced by i18n keys
-├── translations.js   # ALL user-visible strings (en + el) — edit copy here
+├── translations.js   # UI strings (en + el) — edit site copy here
+├── works.js          # Works data (window.WORKS) — the gallery is built from it
 ├── styles.css        # Design system + layout (single stylesheet)
-├── script.js         # Language toggle, floating menu, gallery filter, work viewer, footer year
+├── script.js         # Language toggle, floating menu, gallery build/filter, work viewer, footer year
 ├── analytics.js      # Firebase Analytics (ES module; http(s) only)
 ├── robots.txt        # Crawler rules + sitemap pointer
 ├── sitemap.xml       # Single-URL sitemap for GitHub Pages
 ├── images/
 │   ├── hero.webp     # Landing hero background (see Hero below)
 │   ├── about.webp    # About section portrait
-│   └── works/        # Artwork images + local-only works_data.json (excluded from Pages)
+│   └── works/        # Artwork images ({slug}-N.webp)
 ├── README.md         # Human-facing setup/editing/deploy guide
 └── AGENTS.md         # This file
 ```
@@ -55,7 +56,7 @@ Footer.** (There is deliberately **no "Process" section** — it was dropped by 
 - `script.js` `applyLanguage()` swaps all keys and **falls back to English** if a key is missing
   in the other language. Chosen language persists in `localStorage` under `vasiliki-lang`.
 - Default language is English. Toggle floats top-right (`EN / ΕΛ`); menu button floats top-left.
-- **When adding/adding to content, always provide BOTH `en` and `el`.**
+- **When adding content, always provide BOTH `en` and `el`.**
 - Adding a language: add a new top-level block to `window.I18N` with the same keys, then add a
   `<span data-lang="xx">` to the toggle in `index.html`.
 
@@ -114,35 +115,28 @@ Change colors here; everything cascades from these variables.
 
 ## Portfolio / gallery
 
-- **Source of truth for copy (local only):** `images/works/works_data.json` — excluded from
-  GitHub Pages via `_config.yml`. Not loaded at runtime; chat/editing reference. Sync into
-  `index.html` + `translations.js` when adding works.
-- Structure: `featured` (id list only), then category arrays `wall` / `sculptural` /
-  `functional` with full records. Titles are **English-only** (same string in `en` and `el`).
-  Meta fields: `year`, `material_en`/`material_el`, optional `dimensions_en`/`dimensions_el`,
-  optional `extra_en`/`extra_el` (viewer only — not shown in gallery captions). Displayed
-  as `material · dimensions · year` (omit missing parts).
-- Each piece is a `<figure class="gallery__item" data-category="…" data-work="<slug>">` inside
-  `#gallery`. Optional `data-featured="true"` puts it in the default **Featured** filter.
-- Filter tabs: **`featured`** (flag, default — no “All”), then **`wall`**, **`sculptural`**,
-  **`functional`** (by `data-category`). A piece can be featured *and* belong to a category.
-- **Order:** `data-order-featured`, `data-order-wall`, and `data-order-sculptural` (0-based,
-  from `works_data.json`). `script.js` reorders visible gallery items when the active filter
-  changes — featured follows the `featured` array; wall/sculptural follow their category arrays.
-- Cover thumb lives in a fixed-ratio `.gallery__thumb` frame. Extra images + description live
-  in a hidden `.gallery__extra` block (`.gallery__images` children + `.gallery__desc`) so the
-  site still works on `file://` with no `fetch`. Description elements stay empty in HTML; copy
-  comes from `translations.js`.
+- **Source of truth:** `works.js` (`window.WORKS`), loaded by `index.html`. It is a `.js` global,
+  not JSON, because `fetch()` is blocked on `file://`. `script.js` `buildWorks()` generates every
+  `.gallery__item` from it at load and injects the `work.<id>.*` strings into `window.I18N` — so
+  adding a work is **only** an edit to `works.js` plus the image files. No HTML or
+  `translations.js` edits.
+- Structure: `featured` (id list only, in display order), then one array per filter category
+  (`wall`, `sculptural`, `functional`, `chairs`) with full records: `id`, `title` (English-only),
+  `cover` (1-based grid thumb), `images` (count of `{id}-N.webp` files), `meta` (`year`,
+  `material_en/el`, optional `dimensions_en/el`, optional `extra_en/el` shown only in the viewer),
+  `description_en/el` (may be empty). Caption = `material · dimensions · year` (missing parts omitted).
+- **A new category** needs only a new array in `works.js` **plus** a filter button in `index.html`
+  (`data-filter="<cat>"`, `data-i18n="filter.<cat>"`) and `filter.<cat>` in both languages in
+  `translations.js`.
+- Filter tabs: **`featured`** (default — no “All”), then the categories. Order within a filter
+  follows the `featured` list or the category array (`data-order-<cat>` attrs set by the builder).
+- Cover thumb lives in a fixed-ratio `.gallery__thumb` frame; extra images/description sit in a
+  hidden `.gallery__extra` block the viewer reads (no `fetch`).
 - Click opens an **immersive work viewer** (not a cross-work lightbox): near-fullscreen image
   (`object-fit: contain`) with the title visible on open. Optional extra + description sit
   below; a scroll cue appears only when that detail copy exists. Carousel is per piece only
-  (arrows / keyboard / swipe). Close and pick another from the grid. No third-party lightbox;
-  pinch-zoom is out of scope unless added later.
-- i18n keys per piece: `work.<slug>.name`, `work.<slug>.meta`, optional `work.<slug>.extra`,
-  `work.<slug>.desc` (both `en` and `el`; name identical in both).
-- Image convention: slug files in `images/works/` — `{slug}-1.webp`, `{slug}-2.webp`, ….
-  JSON `cover` (1-based index) selects the grid thumb; viewer still lists all images in numeric
-  order. Prefer WebP, ~1200–1600px, lazy-loaded on the grid cover.
+  (arrows / keyboard / swipe). No third-party lightbox; pinch-zoom is out of scope.
+- Image convention: `images/works/{id}-1.webp`, `-2.webp`, …. Prefer WebP, ~1200–1600px.
 
 ## Deployment
 
@@ -183,5 +177,5 @@ cd ~/Projects/vasiliki && python3 -m http.server 8000   # http://localhost:8000
 
 ## Current state / outstanding placeholders
 
-Works are synced from `works_data.json`. Wall, sculptural, and functional categories are live;
-featured ids in JSON may reference works not yet added.
+Works come from `works.js`. Wall, sculptural, functional, and chairs categories are live;
+featured ids may reference works not yet added.

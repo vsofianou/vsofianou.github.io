@@ -65,34 +65,28 @@ to the real address, and update the Instagram / Facebook URLs just below it.
 
 ## Adding artworks
 
-Each piece is a `<figure class="gallery__item">` inside `<div class="gallery">`. The grid shows
-the cover image; click opens a viewer with all photos and the description.
+The gallery is built in the browser from `works.js`; no HTML needs editing. Add a record to the
+right category array (`wall`, `sculptural`, `functional`, `chairs`) and drop the images in
+`images/works/` as `{id}-1.webp`, `{id}-2.webp`, …
 
-```html
-<figure class="gallery__item" data-category="wall" data-featured="true" data-work="1">
-  <div class="gallery__thumb">
-    <img src="images/works/1/01.webp" data-i18n-alt="work.1.name" alt="Untitled I" loading="lazy" />
-  </div>
-  <figcaption>
-    <span class="gallery__name" data-i18n="work.1.name">Untitled I</span>
-    <span class="gallery__meta" data-i18n="work.1.meta">Wool, linen · 2024</span>
-  </figcaption>
-  <div class="gallery__extra" hidden>
-    <div class="gallery__images">
-      <img src="images/works/1/01.webp" alt="" />
-      <img src="images/works/1/02.webp" alt="" />
-    </div>
-    <p class="gallery__desc" data-i18n="work.1.desc"></p>
-  </div>
-</figure>
+```js
+{
+  "id": "my-piece",            // also the image filename prefix
+  "title": "My Piece",
+  "cover": 1,                  // which image is the grid thumbnail (1-based)
+  "images": 2,                 // number of {id}-N.webp files
+  "meta": { "year": "2026", "material_en": "Wool", "material_el": "Μαλλί",
+            "dimensions_en": "100 x 50 cm", "dimensions_el": "100 x 50 εκ." },
+  "description_en": "…", "description_el": "…"
+}
 ```
 
-- Add `work.N.name` / `work.N.meta` / `work.N.desc` in **both** languages in `translations.js`.
-  Use `data-i18n-alt="<key>"` on the cover `<img>` for its `alt` text.
-- `data-category`: `wall`, `sculptural`, `functional`, or `experimental`.
-- `data-featured="true"` includes the piece in the default **Featured** tab (there is no All).
-- Put images in `images/works/N/` as `01.webp`, `02.webp`, … Prefer **WebP**, roughly
-  **1200–1600px** on the long edge. `loading="lazy"` on the cover defers off-screen loads.
+- Provide **both** English and Greek text. `dimensions_*`, `extra_en/el` (viewer-only line) and the
+  descriptions are optional.
+- To feature a piece, add `{ "id": "my-piece" }` to the `featured` list (its position sets the order).
+- A new category also needs a filter button in `index.html` and a `filter.<cat>` string in both
+  languages in `translations.js`.
+- Prefer **WebP**, roughly **1200–1600px** on the long edge.
 
 ## Preview locally
 

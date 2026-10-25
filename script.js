@@ -1,6 +1,89 @@
 (function () {
   "use strict";
 
+  /* ===================== Works (built from works.js) ===================== */
+  var WORKS = window.WORKS || {};
+  var gallery = document.getElementById("gallery");
+
+  function workMeta(m, lang) {
+    var dims = m["dimensions_" + lang];
+    return [m["material_" + lang], dims && dims.replace(/ x /g, " \u00d7 "), m.year]
+      .filter(Boolean).join(" \u00b7 ");
+  }
+
+  function el(tag, className, attrs) {
+    var node = document.createElement(tag);
+    if (className) node.className = className;
+    Object.keys(attrs || {}).forEach(function (k) { node.setAttribute(k, attrs[k]); });
+    return node;
+  }
+
+  function buildWorks() {
+    if (!gallery) return;
+    var featured = (WORKS.featured || []).map(function (f) { return f.id; });
+    Object.keys(WORKS).forEach(function (cat) {
+      if (cat === "featured") return;
+      WORKS[cat].forEach(function (w, i) {
+        ["en", "el"].forEach(function (lang) {
+          var d = (window.I18N = window.I18N || {})[lang] = window.I18N[lang] || {};
+          var p = "work." + w.id + ".";
+          d[p + "name"] = w.title;
+          d[p + "meta"] = workMeta(w.meta, lang);
+          if (w.meta["extra_" + lang]) d[p + "extra"] = w.meta["extra_" + lang];
+          if (w["description_" + lang]) d[p + "desc"] = w["description_" + lang];
+        });
+
+        var key = "work." + w.id + ".";
+        var fig = el("figure", "gallery__item", { "data-category": cat, "data-work": w.id });
+        fig.setAttribute("data-order-" + cat, i);
+        var fi = featured.indexOf(w.id);
+        if (fi !== -1) {
+          fig.setAttribute("data-featured", "true");
+          fig.setAttribute("data-order-featured", fi);
+        }
+
+        var thumb = el("div", "gallery__thumb");
+        var img = el("img", "", {
+          src: "images/works/" + w.id + "-" + w.cover + ".webp",
+          "data-i18n-alt": key + "name",
+          alt: w.title,
+          loading: "lazy"
+        });
+        thumb.appendChild(img);
+
+        var cap = el("figcaption");
+        var name = el("span", "gallery__name", { "data-i18n": key + "name" });
+        name.textContent = w.title;
+        var meta = el("span", "gallery__meta", { "data-i18n": key + "meta" });
+        meta.textContent = workMeta(w.meta, "en");
+        cap.appendChild(name);
+        cap.appendChild(meta);
+
+        var extra = el("div", "gallery__extra");
+        extra.hidden = true;
+        var imgs = el("div", "gallery__images");
+        for (var n = 1; n <= w.images; n++) {
+          imgs.appendChild(el("img", "", { src: "images/works/" + w.id + "-" + n + ".webp", alt: "" }));
+        }
+        extra.appendChild(imgs);
+        if (w.meta.extra_en) {
+          var line = el("p", "gallery__extra-line", { "data-i18n": key + "extra" });
+          line.textContent = w.meta.extra_en;
+          extra.appendChild(line);
+        }
+        if (w.description_en) {
+          extra.appendChild(el("p", "gallery__desc", { "data-i18n": key + "desc" }));
+        }
+
+        fig.appendChild(thumb);
+        fig.appendChild(cap);
+        fig.appendChild(extra);
+        gallery.appendChild(fig);
+      });
+    });
+  }
+  buildWorks();
+
   /* ===================== Language toggle ===================== */
   var STORAGE_KEY = "vasiliki-lang";
   var langToggle = document.getElementById("langToggle");
@@ -112,7 +195,6 @@
 
   /* ===================== Portfolio filter ===================== */
   var filters = document.getElementById("filters");
-  var gallery = document.getElementById("gallery");
   var items = Array.prototype.slice.call(document.querySelectorAll(".gallery__item"));
 
   function itemMatchesFilter(item, cat) {
@@ -125,6 +207,7 @@
     if (cat === "featured") return "data-order-featured";
     if (cat === "wall") return "data-order-wall";
     if (cat === "functional") return "data-order-functional";
+    if (cat === "chairs") return "data-order-chairs";
     return "data-order-sculptural";
   }
 
